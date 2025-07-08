@@ -171,6 +171,46 @@ body {
     font-size: 14px;
 }
 
+/* Contact Section */
+.contact-section {
+    padding: 50px 20px;
+    background-color: #f3e5f5;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 32px;
+    color: #4A148C;
+    margin-bottom: 30px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.contact-card {
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 200px;
+}
+
+.contact-card i {
+    font-size: 28px;
+    color: #7B1FA2;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    font-size: 16px;
+    color: #333;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar {

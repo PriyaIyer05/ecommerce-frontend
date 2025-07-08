@@ -2,114 +2,130 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grabzy - Online Shopping</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- Reliable Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grabzy - Online Shopping</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="assets/grabzy-logo.png" alt="Grabzy Logo" />
+    </div>
+    <nav class="navbar" id="navbar">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="#categories-section">Categories</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-right">
+      <input type="text" placeholder="Search products..." class="search-bar" />
+      <div class="cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-count">0</span>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="logo">
-            <img src="assets/grabzy-logo.png" alt="Grabzy Logo">
-        </div>
-        <nav class="navbar" id="navbar">
-            <a href="#">Home</a>
-            <a href="#">Products</a>
-            <a href="#">Categories</a>
-            <a href="#">Contact</a>
-        </nav>
-        <div class="header-right">
-            <input type="text" placeholder="Search products..." class="search-bar">
-            <div class="cart">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <span class="cart-count">0</span>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </header>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Speedy Grocery Delivery</h1>
+      <p>Fresh. Fast. At Your Doorstep.</p>
+      <a href="products.html"><button class="shop-btn">Shop Now</button></a>
+    </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Speedy Grocery Delivery</h1>
-            <p>Fresh. Fast. At Your Doorstep.</p>
-            <button class="shop-btn">Shop Now</button>
-        </div>
-    </section>
+  <!-- Categories Section -->
+  <section class="categories-section" id="categories-section">
+    <h2>Shop by Category</h2>
+    <div class="categories">
+      <div class="category-card">
+        <img src="assets/categories/fruits.png" alt="Fruits" />
+        <p>Fruits</p>
+      </div>
+      <div class="category-card">
+        <img src="assets/categories/vegetables.png" alt="Vegetables" />
+        <p>Vegetables</p>
+      </div>
+      <div class="category-card">
+        <img src="assets/categories/softdrinks.png" alt="Soft Drinks" />
+        <p>Soft Drinks</p>
+      </div>
+      <div class="category-card">
+        <img src="assets/categories/icecream.png" alt="Ice Cream" />
+        <p>Ice Cream</p>
+      </div>
+      <div class="category-card">
+        <img src="assets/categories/chocolates.png" alt="Chocolates" />
+        <p>Chocolates & Sweets</p>
+      </div>
+      <div class="category-card">
+        <img src="assets/categories/snacks.png" alt="Snacks" />
+        <p>Snacks</p>
+      </div>
+      <div class="category-card">
+        <img src="assets/categories/teacoffee.png" alt="Tea & Coffee" />
+        <p>Tea & Coffee</p>
+      </div>
+      <div class="category-card">
+        <img src="assets/categories/attarice.png" alt="Atta, Rice & Dal" />
+        <p>Atta, Rice & Dal</p>
+      </div>
+      <div class="category-card">
+        <img src="assets/categories/instantfood.png" alt="Instant Food" />
+        <p>Instant Food</p>
+      </div>
+      <div class="category-card">
+        <img src="assets/categories/skincare.png" alt="Skin Care" />
+        <p>Skin Care</p>
+      </div>
+      <div class="category-card">
+        <img src="assets/categories/stationery.png" alt="Stationery & Games" />
+        <p>Stationery & Games</p>
+      </div>
+      <div class="category-card">
+        <img src="assets/categories/poojaneeds.png" alt="Pooja Needs" />
+        <p>Pooja Needs</p>
+      </div>
+      <div class="category-card">
+        <img src="assets/categories/breakfast.png" alt="Breakfast" />
+        <p>Breakfast</p>
+      </div>
+      <div class="category-card">
+        <img src="assets/categories/biscuits.png" alt="Bakery & Biscuits" />
+        <p>Bakery & Biscuits</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Categories Section -->
-    <section class="categories-section">
-        <h2>Shop by Category</h2>
-        <div class="categories">
-            <!-- All Categories -->
-            <div class="category-card">
-                <img src="assets/categories/fruits.png" alt="Fruits">
-                <p>Fruits</p>
-            </div>
-            <div class="category-card">
-                <img src="assets/categories/vegetables.png" alt="Vegetables">
-                <p>Vegetables</p>
-            </div>
-            <div class="category-card">
-                <img src="assets/categories/softdrinks.png" alt="Soft Drinks">
-                <p>Soft Drinks</p>
-            </div>
-            <div class="category-card">
-                <img src="assets/categories/icecream.png" alt="Ice Cream">
-                <p>Ice Cream</p>
-            </div>
-            <div class="category-card">
-                <img src="assets/categories/chocolates.png" alt="Chocolates">
-                <p>Chocolates & Sweets</p>
-            </div>
-            <div class="category-card">
-                <img src="assets/categories/snacks.png" alt="Snacks">
-                <p>Snacks</p>
-            </div>
-            <div class="category-card">
-                <img src="assets/categories/teacoffee.png" alt="Tea & Coffee">
-                <p>Tea & Coffee</p>
-            </div>
-            <div class="category-card">
-                <img src="assets/categories/attarice.png" alt="Atta, Rice & Dal">
-                <p>Atta, Rice & Dal</p>
-            </div>
-            <div class="category-card">
-                <img src="assets/categories/instantfood.png" alt="Instant Food">
-                <p>Instant Food</p>
-            </div>
-            <div class="category-card">
-                <img src="assets/categories/skincare.png" alt="Skin Care">
-                <p>Skin Care</p>
-            </div>
-            <div class="category-card">
-                <img src="assets/categories/stationery.png" alt="Stationery & Games">
-                <p>Stationery & Games</p>
-            </div>
-            <div class="category-card">
-                <img src="assets/categories/poojaneeds.png" alt="Pooja Needs">
-                <p>Pooja Needs</p>
-            </div>
-            <div class="category-card">
-                <img src="assets/categories/breakfast.png" alt="Breakfast">
-                <p>Breakfast</p>
-            </div>
-            <div class="category-card">
-                <img src="assets/categories/biscuits.png" alt="Bakery & Biscuits">
-                <p>Bakery & Biscuits</p>
-            </div>
-        </div>
-    </section>
+  <!-- Contact Section -->
+<section class="contact-section" id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact-container">
+    <div class="contact-card">
+      <i class="fas fa-envelope"></i>
+      <p>support@grabzy.com</p>
+    </div>
+    <div class="contact-card">
+      <i class="fas fa-phone"></i>
+      <p>+91 98765 43210</p>
+    </div>
+    <div class="contact-card">
+      <i class="fas fa-map-marker-alt"></i>
+      <p>Mumbai, Maharashtra, India</p>
+    </div>
+  </div>
+</section>
 
-    <script src="scripts/app.js"></script>
+
+  <script src="scripts/app.js"></script>
 </body>
 
 </html>
-s

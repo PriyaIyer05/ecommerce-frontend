@@ -1,0 +1,985 @@
+[
+  {
+    "id": 1,
+    "name": "Apple",
+    "price": 120,
+    "category": "Fruits",
+    "image": "assets/products/apple.png"
+  },
+  {
+    "id": 2,
+    "name": "Banana",
+    "price": 45,
+    "category": "Fruits",
+    "image": "assets/products/banana.png"
+  },
+  {
+    "id": 3,
+    "name": "Orange",
+    "price": 80,
+    "category": "Fruits",
+    "image": "assets/products/orange.png"
+  },
+  {
+    "id": 4,
+    "name": "Papaya",
+    "price": 60,
+    "category": "Fruits",
+    "image": "assets/products/papaya.png"
+  },
+  {
+    "id": 5,
+    "name": "Green Grapes",
+    "price": 90,
+    "category": "Fruits",
+    "image": "assets/products/green-grapes.png"
+  },
+  {
+    "id": 6,
+    "name": "Dragon Fruit",
+    "price": 150,
+    "category": "Fruits",
+    "image": "assets/products/dragon-fruit.png"
+  },
+  {
+    "id": 7,
+    "name": "Sitafal",
+    "price": 100,
+    "category": "Fruits",
+    "image": "assets/products/sitafal.png"
+  },
+  {
+    "id": 8,
+    "name": "Litchi",
+    "price": 120,
+    "category": "Fruits",
+    "image": "assets/products/litchi.png"
+  },
+  {
+    "id": 9,
+    "name": "Strawberry",
+    "price": 140,
+    "category": "Fruits",
+    "image": "assets/products/strawberry.png"
+  },
+  {
+    "id": 10,
+    "name": "Mango",
+    "price": 160,
+    "category": "Fruits",
+    "image": "assets/products/mango.png"
+  },
+
+  {
+  "id": 11,
+  "name": "Onion (1kg)",
+  "price": 28,
+  "image": "assets/products/onion.png",
+  "category": "Vegetables"
+},
+{
+  "id": 12,
+  "name": "Potato (1kg)",
+  "price": 25,
+  "image": "assets/products/potato.png",
+  "category": "Vegetables"
+},
+{
+  "id": 13,
+  "name": "Tomato (1kg)",
+  "price": 35,
+  "image": "assets/products/tomato.png",
+  "category": "Vegetables"
+},
+{
+  "id": 14,
+  "name": "Bhindi / Okra (250g)",
+  "price": 18,
+  "image": "assets/products/bhindi.png",
+  "category": "Vegetables"
+},
+{
+  "id": 15,
+  "name": "Brinjal / Baingan (500g)",
+  "price": 22,
+  "image": "assets/products/brinjal.png",
+  "category": "Vegetables"
+},
+{
+  "id": 16,
+  "name": "French Beans (250g)",
+  "price": 30,
+  "image": "assets/products/beans.png",
+  "category": "Vegetables"
+},
+{
+  "id": 17,
+  "name": "Cauliflower (1 piece)",
+  "price": 45,
+  "image": "assets/products/cauliflower.png",
+  "category": "Vegetables"
+},
+{
+  "id": 18,
+  "name": "Cabbage (1 piece)",
+  "price": 30,
+  "image": "assets/products/cabbage.png",
+  "category": "Vegetables"
+},
+{
+  "id": 19,
+  "name": "Methi / Fenugreek Leaves (1 bunch)",
+  "price": 20,
+  "image": "assets/products/methi.png",
+  "category": "Vegetables"
+},
+{
+  "id": 20,
+  "name": "Palak / Spinach (1 bunch)",
+  "price": 20,
+  "image": "assets/products/palak.png",
+  "category": "Vegetables"
+},
+{
+  "id": 21,
+  "name": "Thums Up (750ml)",
+  "price": 40,
+  "image": "assets/products/thumsup.png",
+  "category": "Soft Drinks"
+},
+{
+  "id": 22,
+  "name": "Sprite (750ml)",
+  "price": 40,
+  "image": "assets/products/sprite.png",
+  "category": "Soft Drinks"
+},
+{
+  "id": 23,
+  "name": "Pepsi (750ml)",
+  "price": 40,
+  "image": "assets/products/pepsi.png",
+  "category": "Soft Drinks"
+},
+{
+  "id": 24,
+  "name": "Limca (750ml)",
+  "price": 38,
+  "image": "assets/products/limca.png",
+  "category": "Soft Drinks"
+},
+{
+  "id": 25,
+  "name": "Fanta (750ml)",
+  "price": 40,
+  "image": "assets/products/fanta.png",
+  "category": "Soft Drinks"
+},
+{
+  "id": 26,
+  "name": "Mirinda (750ml)",
+  "price": 38,
+  "image": "assets/products/mirinda.png",
+  "category": "Soft Drinks"
+},
+{
+  "id": 27,
+  "name": "Duke’s Soda (750ml)",
+  "price": 25,
+  "image": "assets/products/dukes.png",
+  "category": "Soft Drinks"
+},
+{
+  "id": 28,
+  "name": "Coca-Cola (750ml)",
+  "price": 40,
+  "image": "assets/products/cocacola.png",
+  "category": "Soft Drinks"
+},
+{
+  "id": 29,
+  "name": "Campa Cola (500ml)",
+  "price": 30,
+  "image": "assets/products/campa.png",
+  "category": "Soft Drinks"
+},
+{
+  "id": 30,
+  "name": "7UP (750ml)",
+  "price": 38,
+  "image": "assets/products/7up.png",
+  "category": "Soft Drinks"
+},
+{
+  "id": 31,
+  "name": "Amul Choco Chips Ice Cream (1000ml)",
+  "price": 190,
+  "image": "assets/products/amul-chocochips.png",
+  "category": "Ice Cream"
+},
+{
+  "id": 32,
+  "name": "Naturals Tender Coconut Ice Cream (150ml)",
+  "price": 60,
+  "image": "assets/products/naturals-tendercoconut.png",
+  "category": "Ice Cream"
+},
+{
+  "id": 33,
+  "name": "Baskin Robbins Cotton Candy",
+  "price": 99,
+  "image": "assets/products/baskin-cottoncandy.png",
+  "category": "Ice Cream"
+},
+{
+  "id": 34,
+  "name": "Kwality Wall’s Magnum Brownie",
+  "price": 130,
+  "image": "assets/products/magnum-brownie.png",
+  "category": "Ice Cream"
+},
+{
+  "id": 35,
+  "name": "Amul Tricone",
+  "price": 35,
+  "image": "assets/products/amul-tricone.png",
+  "category": "Ice Cream"
+},
+{
+  "id": 36,
+  "name": "Amul Butterscotch Ice Cream (1000ml)",
+  "price": 180,
+  "image": "assets/products/amul-butterscotch.png",
+  "category": "Ice Cream"
+},
+{
+  "id": 37,
+  "name": "Kwality Wall’s Cadbury Crackle",
+  "price": 120,
+  "image": "assets/products/cadbury-crackle.png",
+  "category": "Ice Cream"
+},
+{
+  "id": 38,
+  "name": "Cornetto Double Chocolate",
+  "price": 45,
+  "image": "assets/products/cornetto-doublechoc.png",
+  "category": "Ice Cream"
+},
+{
+  "id": 39,
+  "name": "Amul Frostick",
+  "price": 35,
+  "image": "assets/products/amul-frostick.png",
+  "category": "Ice Cream"
+},
+{
+  "id": 40,
+  "name": "NIC Madagascar Chocolate",
+  "price": 85,
+  "image": "assets/products/nic-madagascar.png",
+  "category": "Ice Cream"
+},
+{
+  "id": 41,
+  "name": "Cadbury Dairy Milk",
+  "price": 45,
+  "image": "assets/products/dairy-milk.png",
+  "category": "Chocolates & Sweets"
+},
+{
+  "id": 42,
+  "name": "Cadbury Dairy Milk Family Pack",
+  "price": 99,
+  "image": "assets/products/dairy-milk-family.png",
+  "category": "Chocolates & Sweets"
+},
+{
+  "id": 43,
+  "name": "Cadbury Celebrations",
+  "price": 199,
+  "image": "assets/products/celebrations.png",
+  "category": "Chocolates & Sweets"
+},
+{
+  "id": 44,
+  "name": "Lal Mysore Pak",
+  "price": 130,
+  "image": "assets/products/mysore-pak.png",
+  "category": "Chocolates & Sweets"
+},
+{
+  "id": 45,
+  "name": "Ferrero Rocher (4 pcs)",
+  "price": 180,
+  "image": "assets/products/ferrero-rocher.png",
+  "category": "Chocolates & Sweets"
+},
+{
+  "id": 46,
+  "name": "Dadi’s Besan Laddu",
+  "price": 99,
+  "image": "assets/products/besan-laddu.png",
+  "category": "Chocolates & Sweets"
+},
+{
+  "id": 47,
+  "name": "5 Star",
+  "price": 20,
+  "image": "assets/products/5star.png",
+  "category": "Chocolates & Sweets"
+},
+{
+  "id": 48,
+  "name": "Kit Kat",
+  "price": 25,
+  "image": "assets/products/kitkat.png",
+  "category": "Chocolates & Sweets"
+},
+{
+  "id": 49,
+  "name": "Haldiram’s Gulab Jamun",
+  "price": 140,
+  "image": "assets/products/gulab-jamun.png",
+  "category": "Chocolates & Sweets"
+},
+{
+  "id": 50,
+  "name": "Cadbury Gems",
+  "price": 30,
+  "image": "assets/products/gems.png",
+  "category": "Chocolates & Sweets"
+},
+{
+  "id": 51,
+  "name": "Lay's India's Magic Masala",
+  "price": 20,
+  "image": "assets/products/lays-magic-masala.png",
+  "category": "Snacks"
+},
+{
+  "id": 52,
+  "name": "Balaji Crunchem Salted Wafers",
+  "price": 15,
+  "image": "assets/products/balaji-crunchem.png",
+  "category": "Snacks"
+},
+{
+  "id": 53,
+  "name": "Gopal Farali Chivda Namkeen",
+  "price": 30,
+  "image": "assets/products/gopal-farali.png",
+  "category": "Snacks"
+},
+{
+  "id": 54,
+  "name": "Balaji Moong Dal Namkeen",
+  "price": 25,
+  "image": "assets/products/balaji-moongdal.png",
+  "category": "Snacks"
+},
+{
+  "id": 55,
+  "name": "Rajam Garlic Mixture Namkeen",
+  "price": 40,
+  "image": "assets/products/rajam-mixture.png",
+  "category": "Snacks"
+},
+{
+  "id": 56,
+  "name": "Garden Crispy Murukku",
+  "price": 35,
+  "image": "assets/products/garden-murukku.png",
+  "category": "Snacks"
+},
+{
+  "id": 57,
+  "name": "Chheda's Bhakarwadi",
+  "price": 30,
+  "image": "assets/products/bhakarwadi.png",
+  "category": "Snacks"
+},
+{
+  "id": 58,
+  "name": "Doritos Cheese Nachos",
+  "price": 50,
+  "image": "assets/products/doritos.png",
+  "category": "Snacks"
+},
+{
+  "id": 59,
+  "name": "Act II Butter Popcorn",
+  "price": 20,
+  "image": "assets/products/act2-butter.png",
+  "category": "Snacks"
+},
+{
+  "id": 60,
+  "name": "Act II Caramel Bliss Popcorn",
+  "price": 25,
+  "image": "assets/products/act2-caramel.png",
+  "category": "Snacks"
+},
+{
+  "id": 61,
+  "name": "Society Tea",
+  "price": 130,
+  "image": "assets/products/society-tea.png",
+  "category": "Tea & Coffee"
+},
+{
+  "id": 62,
+  "name": "Wagh Bakri Premium Tea",
+  "price": 150,
+  "image": "assets/products/waghbakri-tea.png",
+  "category": "Tea & Coffee"
+},
+{
+  "id": 63,
+  "name": "Society Masala Tea",
+  "price": 140,
+  "image": "assets/products/society-masala-tea.png",
+  "category": "Tea & Coffee"
+},
+{
+  "id": 64,
+  "name": "Chaayos Adrak Elaichi Tea",
+  "price": 199,
+  "image": "assets/products/chaayos-tea.png",
+  "category": "Tea & Coffee"
+},
+{
+  "id": 65,
+  "name": "Bru Gold Coffee (Caramel)",
+  "price": 220,
+  "image": "assets/products/bru-gold.png",
+  "category": "Tea & Coffee"
+},
+{
+  "id": 66,
+  "name": "Tata Coffee Grand Classic",
+  "price": 180,
+  "image": "assets/products/tata-coffee.png",
+  "category": "Tea & Coffee"
+},
+{
+  "id": 67,
+  "name": "Bru Instant Coffee",
+  "price": 130,
+  "image": "assets/products/bru-instant.png",
+  "category": "Tea & Coffee"
+},
+{
+  "id": 68,
+  "name": "Girnar Detox Desi Kahwa Tea Bags",
+  "price": 160,
+  "image": "assets/products/girnar-kahwa.png",
+  "category": "Tea & Coffee"
+},
+{
+  "id": 69,
+  "name": "Tata Filter Coffee Decoction",
+  "price": 80,
+  "image": "assets/products/tata-decoction.png",
+  "category": "Tea & Coffee"
+},
+{
+  "id": 70,
+  "name": "Society Instant Lemongrass Tea",
+  "price": 90,
+  "image": "assets/products/society-lemongrass.png",
+  "category": "Tea & Coffee"
+},
+{
+  "id": 71,
+  "name": "Aashirvaad Select MP Sharbati Atta",
+  "price": 280,
+  "image": "assets/products/aashirvaad-atta.png",
+  "category": "Atta, Rice & Dal"
+},
+{
+  "id": 72,
+  "name": "Pillsbury Chakki Fresh Atta",
+  "price": 250,
+  "image": "assets/products/pillsbury-atta.png",
+  "category": "Atta, Rice & Dal"
+},
+{
+  "id": 73,
+  "name": "Daawat Rozana Gold Basmati Rice",
+  "price": 120,
+  "image": "assets/products/daawat-rice.png",
+  "category": "Atta, Rice & Dal"
+},
+{
+  "id": 74,
+  "name": "India Gate Tibar Basmati Rice",
+  "price": 160,
+  "image": "assets/products/india-gate-rice.png",
+  "category": "Atta, Rice & Dal"
+},
+{
+  "id": 75,
+  "name": "Tata Sampann Unpolished Kali Urad",
+  "price": 95,
+  "image": "assets/products/tata-kali-urad.png",
+  "category": "Atta, Rice & Dal"
+},
+{
+  "id": 76,
+  "name": "Tata Sampann Toor Dal",
+  "price": 115,
+  "image": "assets/products/tata-toor-dal.png",
+  "category": "Atta, Rice & Dal"
+},
+{
+  "id": 77,
+  "name": "Whole Farm Grocery Urad Dal",
+  "price": 90,
+  "image": "assets/products/wholefarm-urad.png",
+  "category": "Atta, Rice & Dal"
+},
+{
+  "id": 78,
+  "name": "Tata Sampann Yellow Moong Dal",
+  "price": 110,
+  "image": "assets/products/tata-yellow-moong.png",
+  "category": "Atta, Rice & Dal"
+},
+{
+  "id": 79,
+  "name": "Fortune Maida",
+  "price": 35,
+  "image": "assets/products/fortune-maida.png",
+  "category": "Atta, Rice & Dal"
+},
+{
+  "id": 80,
+  "name": "Satyam Sooji (Rava)",
+  "price": 42,
+  "image": "assets/products/satyam-sooji.png",
+  "category": "Atta, Rice & Dal"
+},
+{
+  "id": 81,
+  "name": "Yippee Magic Masala Instant Noodles",
+  "price": 15,
+  "image": "assets/products/yippee-magic-masala.png",
+  "category": "Instant Food"
+},
+{
+  "id": 82,
+  "name": "Maggi Masala - 2 Minutes Instant Noodles",
+  "price": 14,
+  "image": "assets/products/maggi-masala.png",
+  "category": "Instant Food"
+},
+{
+  "id": 83,
+  "name": "Maggi Spicy Garlic Instant Noodles",
+  "price": 18,
+  "image": "assets/products/maggi-spicy-garlic.png",
+  "category": "Instant Food"
+},
+{
+  "id": 84,
+  "name": "McCain Chilli Garlic Potato Bites",
+  "price": 110,
+  "image": "assets/products/mccain-chilli-garlic.png",
+  "category": "Instant Food"
+},
+{
+  "id": 85,
+  "name": "McCain French Fries",
+  "price": 95,
+  "image": "assets/products/mccain-fries.png",
+  "category": "Instant Food"
+},
+{
+  "id": 86,
+  "name": "Maggi Pazzta Cheese Macaroni Instant Pasta",
+  "price": 30,
+  "image": "assets/products/maggi-pazzta.png",
+  "category": "Instant Food"
+},
+{
+  "id": 87,
+  "name": "Yu Pink Sauce Instant Wheat Pasta",
+  "price": 45,
+  "image": "assets/products/yu-pink-pasta.png",
+  "category": "Instant Food"
+},
+{
+  "id": 88,
+  "name": "Yu Three Cheese Instant Pasta Cup",
+  "price": 55,
+  "image": "assets/products/yu-three-cheese.png",
+  "category": "Instant Food"
+},
+{
+  "id": 89,
+  "name": "Nissin Geki - Hot & Spicy Korean Veg Noodles",
+  "price": 60,
+  "image": "assets/products/nissin-geki.png",
+  "category": "Instant Food"
+},
+{
+  "id": 90,
+  "name": "McCain Aloo Tikki",
+  "price": 85,
+  "image": "assets/products/mccain-aloo-tikki.png",
+  "category": "Instant Food"
+},
+{
+  "id": 91,
+  "name": "Everyuth Walnut Exfoliating Face Scrub",
+  "price": 75,
+  "image": "assets/products/everyuth-scrub.png",
+  "category": "Skin Care"
+},
+{
+  "id": 92,
+  "name": "Biotique Papaya Tan Removal Brightening & Revitalizing Face Scrub",
+  "price": 110,
+  "image": "assets/products/biotique-papaya.png",
+  "category": "Skin Care"
+},
+{
+  "id": 93,
+  "name": "Clean & Clear Aloe Vera Face Wash",
+  "price": 65,
+  "image": "assets/products/clean-clear.png",
+  "category": "Skin Care"
+},
+{
+  "id": 94,
+  "name": "Lakme Sunscreen Gel",
+  "price": 180,
+  "image": "assets/products/lakme-sunscreen.png",
+  "category": "Skin Care"
+},
+{
+  "id": 95,
+  "name": "Tresemme Keratin Smooth Conditioner",
+  "price": 190,
+  "image": "assets/products/tresemme-conditioner.png",
+  "category": "Skin Care"
+},
+{
+  "id": 96,
+  "name": "Tresemme Keratin Smooth Shampoo",
+  "price": 210,
+  "image": "assets/products/tresemme-shampoo.png",
+  "category": "Skin Care"
+},
+{
+  "id": 97,
+  "name": "Indulekha Bhringraj Hair Oil",
+  "price": 120,
+  "image": "assets/products/indulekha.png",
+  "category": "Skin Care"
+},
+{
+  "id": 98,
+  "name": "Parachute 100% Pure Coconut Oil",
+  "price": 60,
+  "image": "assets/products/parachute.png",
+  "category": "Skin Care"
+},
+{
+  "id": 99,
+  "name": "Johnson's Blossoms Baby Powder",
+  "price": 80,
+  "image": "assets/products/johnsons-powder.png",
+  "category": "Skin Care"
+},
+{
+  "id": 100,
+  "name": "Johnson's Baby Lotion",
+  "price": 95,
+  "image": "assets/products/johnsons-lotion.png",
+  "category": "Skin Care"
+},
+{
+  "id": 101,
+  "name": "Fevistik Glue Stick",
+  "price": 20,
+  "image": "assets/products/fevistik.png",
+  "category": "Stationery & Games"
+},
+{
+  "id": 102,
+  "name": "Hauser XO Ball Pen",
+  "price": 10,
+  "image": "assets/products/hauser-pen.png",
+  "category": "Stationery & Games"
+},
+{
+  "id": 103,
+  "name": "Reynolds Brite Ball Pen (Red)",
+  "price": 8,
+  "image": "assets/products/reynolds-red.png",
+  "category": "Stationery & Games"
+},
+{
+  "id": 104,
+  "name": "Camlin Scale",
+  "price": 15,
+  "image": "assets/products/camlin-scale.png",
+  "category": "Stationery & Games"
+},
+{
+  "id": 105,
+  "name": "Classmate Single Line Notebook",
+  "price": 55,
+  "image": "assets/products/classmate-notebook.png",
+  "category": "Stationery & Games"
+},
+{
+  "id": 106,
+  "name": "Doms Pencils",
+  "price": 30,
+  "image": "assets/products/doms-pencils.png",
+  "category": "Stationery & Games"
+},
+{
+  "id": 107,
+  "name": "Wembley Pick & Drop Tabletop Game",
+  "price": 120,
+  "image": "assets/products/wembley-pickdrop.png",
+  "category": "Stationery & Games"
+},
+{
+  "id": 108,
+  "name": "Monopoly Board Game",
+  "price": 399,
+  "image": "assets/products/monopoly.png",
+  "category": "Stationery & Games"
+},
+{
+  "id": 109,
+  "name": "UNO Card Game",
+  "price": 149,
+  "image": "assets/products/uno.png",
+  "category": "Stationery & Games"
+},
+{
+  "id": 110,
+  "name": "Wild Animals Puzzle",
+  "price": 89,
+  "image": "assets/products/wild-puzzle.png",
+  "category": "Stationery & Games"
+},
+{
+  "id": 111,
+  "name": "Agarbatti",
+  "price": 25,
+  "image": "assets/products/agarbatti.png",
+  "category": "Pooja Essentials"
+},
+{
+  "id": 112,
+  "name": "Kapur / Camphor",
+  "price": 30,
+  "image": "assets/products/camphor.png",
+  "category": "Pooja Essentials"
+},
+{
+  "id": 113,
+  "name": "Ghee Diya Batti",
+  "price": 20,
+  "image": "assets/products/ghee-diya-batti.png",
+  "category": "Pooja Essentials"
+},
+{
+  "id": 114,
+  "name": "Matchbox",
+  "price": 5,
+  "image": "assets/products/matchbox.png",
+  "category": "Pooja Essentials"
+},
+{
+  "id": 115,
+  "name": "Kumkum",
+  "price": 10,
+  "image": "assets/products/kumkum.png",
+  "category": "Pooja Essentials"
+},
+{
+  "id": 116,
+  "name": "Pooja Flowers",
+  "price": 35,
+  "image": "assets/products/pooja-flowers.png",
+  "category": "Pooja Essentials"
+},
+{
+  "id": 117,
+  "name": "Pooja Thali",
+  "price": 70,
+  "image": "assets/products/pooja-thali.png",
+  "category": "Pooja Essentials"
+},
+{
+  "id": 118,
+  "name": "Brown Coconut",
+  "price": 25,
+  "image": "assets/products/brown-coconut.png",
+  "category": "Pooja Essentials"
+},
+{
+  "id": 119,
+  "name": "Beetel Leaf (Paan Pata)",
+  "price": 15,
+  "image": "assets/products/beetel-leaf.png",
+  "category": "Pooja Essentials"
+},
+{
+  "id": 120,
+  "name": "Haldi Stick",
+  "price": 10,
+  "image": "assets/products/haldi-stick.png",
+  "category": "Pooja Essentials"
+},
+{
+  "id": 121,
+  "name": "Kellogg's Millet Breakfast Cereal Muesli",
+  "price": 199,
+  "image": "assets/products/kelloggs-millet-muesli.png",
+  "category": "Breakfast"
+},
+{
+  "id": 122,
+  "name": "Kellogg's Chocolate Muesli",
+  "price": 210,
+  "image": "assets/products/kelloggs-choco-muesli.png",
+  "category": "Breakfast"
+},
+{
+  "id": 123,
+  "name": "Amul Salted Butter",
+  "price": 52,
+  "image": "assets/products/amul-butter.png",
+  "category": "Breakfast"
+},
+{
+  "id": 124,
+  "name": "Quaker Rolled Instant Oats",
+  "price": 95,
+  "image": "assets/products/quaker-oats.png",
+  "category": "Breakfast"
+},
+{
+  "id": 125,
+  "name": "iD Idli & Dosa Batter",
+  "price": 70,
+  "image": "assets/products/id-batter.png",
+  "category": "Breakfast"
+},
+{
+  "id": 126,
+  "name": "Kellogg's Chocos Crunchy Bites Kids Cereal",
+  "price": 135,
+  "image": "assets/products/kelloggs-chocos.png",
+  "category": "Breakfast"
+},
+{
+  "id": 127,
+  "name": "Kellogg's Corn Flakes",
+  "price": 105,
+  "image": "assets/products/kelloggs-cornflakes.png",
+  "category": "Breakfast"
+},
+{
+  "id": 128,
+  "name": "Amul Cheese Cubes",
+  "price": 90,
+  "image": "assets/products/amul-cheese-cubes.png",
+  "category": "Breakfast"
+},
+{
+  "id": 129,
+  "name": "Gokul Full Cream Milk",
+  "price": 58,
+  "image": "assets/products/gokul-milk.png",
+  "category": "Breakfast"
+},
+{
+  "id": 130,
+  "name": "Saffola Masala Veggie Twist Oats",
+  "price": 45,
+  "image": "assets/products/saffola-oats.png",
+  "category": "Breakfast"
+},
+{
+  "id": 131,
+  "name": "Parle-G Glucose Biscuits",
+  "price": 10,
+  "image": "assets/products/parle-g.png",
+  "category": "Bakery & Biscuits"
+},
+{
+  "id": 132,
+  "name": "Britannia Good Day Cashew Cookies",
+  "price": 30,
+  "image": "assets/products/goodday-cashew.png",
+  "category": "Bakery & Biscuits"
+},
+{
+  "id": 133,
+  "name": "Sunfeast Dark Fantasy Choco Fills",
+  "price": 25,
+  "image": "assets/products/dark-fantasy.png",
+  "category": "Bakery & Biscuits"
+},
+{
+  "id": 134,
+  "name": "Britannia Marie Gold Biscuits",
+  "price": 22,
+  "image": "assets/products/marie-gold.png",
+  "category": "Bakery & Biscuits"
+},
+{
+  "id": 135,
+  "name": "Modern White Bread",
+  "price": 28,
+  "image": "assets/products/modern-bread.png",
+  "category": "Bakery & Biscuits"
+},
+{
+  "id": 136,
+  "name": "English Oven Garlic Bread",
+  "price": 55,
+  "image": "assets/products/english-oven-garlic.png",
+  "category": "Bakery & Biscuits"
+},
+{
+  "id": 137,
+  "name": "Hide & Seek Chocolate Chip Cookies",
+  "price": 40,
+  "image": "assets/products/hide-seek.png",
+  "category": "Bakery & Biscuits"
+},
+{
+  "id": 138,
+  "name": "Lotte Choco Pie",
+  "price": 35,
+  "image": "assets/products/lotte-choco-pie.png",
+  "category": "Bakery & Biscuits"
+},
+{
+  "id": 139,
+  "name": "Karachi Bakery Gur Atta Biscuit",
+  "price": 60,
+  "image": "assets/products/karachi-gur-atta.png",
+  "category": "Bakery & Biscuits"
+},
+{
+  "id": 140,
+  "name": "Britannia Treat Jim Jam",
+  "price": 20,
+  "image": "assets/products/jimjam.png",
+  "category": "Bakery & Biscuits"
+}
+
+
+]
