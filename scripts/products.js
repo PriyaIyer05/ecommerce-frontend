@@ -1,23 +1,48 @@
-fetch('products.json')
-  .then(response => response.json())
-  .then(products => {
-    const container = document.getElementById('products-container');
+document.addEventListener("DOMContentLoaded", () => {
+  const productGrid = document.getElementById("products-grid");
 
-    products.forEach(product => {
-      const card = document.createElement('div');
-      card.className = 'product-card';
+  // Get category from URL if passed (e.g., products.html?category=Ice%20Cream)
+  const urlParams = new URLSearchParams(window.location.search);
+  const categoryFilter = urlParams.get("category");
 
-      card.innerHTML = `
-        <img src="${product.image}" alt="${product.name}">
-        <h3>${product.name}</h3>
-        <p>₹${product.price}</p>
-        <button>Add to Cart</button>
-      `;
+  fetch("products.json")
+    .then((response) => response.json())
+    .then((products) => {
+      if (categoryFilter) {
+        products = products.filter(
+          (product) =>
+            product.category.toLowerCase() === categoryFilter.toLowerCase()
+        );
+      }
 
-      container.appendChild(card);
+      if (products.length === 0) {
+        productGrid.innerHTML = `<p>No products found for "${categoryFilter}".</p>`;
+        return;
+      }
+
+      productGrid.innerHTML = products
+        .map((product) => {
+          return `
+            <div class="product-card">
+              <img src="${product.image}" alt="${product.name}">
+              <h3>${product.name}</h3>
+              <p>${product.description}</p>
+              <p class="price">₹${product.price}</p>
+              <button class="add-to-cart">Add to Cart</button>
+            </div>
+          `;
+        })
+        .join("");
+    })
+    .catch((error) => {
+      console.error("Error loading products:", error);
+      productGrid.innerHTML = `<p>Failed to load products. Please try again later.</p>`;
     });
-  })
-  .catch(error => {
-    document.getElementById('products-container').innerHTML = 'Error loading products.';
-    console.error('Error:', error);
+
+  // Mobile Nav Toggle
+  const hamburger = document.getElementById("hamburger");
+  const navbar = document.getElementById("navbar");
+  hamburger.addEventListener("click", () => {
+    navbar.classList.toggle("show");
   });
+});

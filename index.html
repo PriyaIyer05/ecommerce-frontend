@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Grabzy - Online Shopping</title>
-  <link rel="stylesheet" href="styles/main.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles/main.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
   <!-- Header -->
@@ -44,34 +44,72 @@
   <section class="categories-section" id="categories-section">
     <h2>Shop by Category</h2>
     <div class="categories">
-      <div class="category-card"><img src="assets/categories/fruits.png" alt="Fruits" /><p>Fruits</p></div>
-      <div class="category-card"><img src="assets/categories/vegetables.png" alt="Vegetables" /><p>Vegetables</p></div>
-      <div class="category-card"><img src="assets/categories/softdrinks.png" alt="Soft Drinks" /><p>Soft Drinks</p></div>
-      <div class="category-card"><img src="assets/categories/icecream.png" alt="Ice Cream" /><p>Ice Cream</p></div>
-      <div class="category-card"><img src="assets/categories/chocolates.png" alt="Chocolates" /><p>Chocolates & Sweets</p></div>
-      <div class="category-card"><img src="assets/categories/snacks.png" alt="Snacks" /><p>Snacks</p></div>
-      <div class="category-card"><img src="assets/categories/teacoffee.png" alt="Tea & Coffee" /><p>Tea & Coffee</p></div>
-      <div class="category-card"><img src="assets/categories/attarice.png" alt="Atta, Rice & Dal" /><p>Atta, Rice & Dal</p></div>
-      <div class="category-card"><img src="assets/categories/instantfood.png" alt="Instant Food" /><p>Instant Food</p></div>
-      <div class="category-card"><img src="assets/categories/skincare.png" alt="Skin Care" /><p>Skin Care</p></div>
-      <div class="category-card"><img src="assets/categories/stationery.png" alt="Stationery & Games" /><p>Stationery & Games</p></div>
-      <div class="category-card"><img src="assets/categories/poojaneeds.png" alt="Pooja Needs" /><p>Pooja Needs</p></div>
-      <div class="category-card"><img src="assets/categories/breakfast.png" alt="Breakfast" /><p>Breakfast</p></div>
-      <div class="category-card"><img src="assets/categories/biscuits.png" alt="Bakery & Biscuits" /><p>Bakery & Biscuits</p></div>
+      <div class="category-card" onclick="window.location.href='products.html?category=Fruits'">
+        <img src="assets/categories/fruits.png" alt="Fruits" />
+        <p>Fruits</p>
+      </div>
+      <div class="category-card" onclick="window.location.href='products.html?category=Vegetables'">
+        <img src="assets/categories/vegetables.png" alt="Vegetables" />
+        <p>Vegetables</p>
+      </div>
+      <div class="category-card" onclick="window.location.href='products.html?category=Soft Drinks'">
+        <img src="assets/categories/softdrinks.png" alt="Soft Drinks" />
+        <p>Soft Drinks</p>
+      </div>
+      <div class="category-card" onclick="window.location.href='products.html?category=Ice Cream'">
+        <img src="assets/categories/icecream.png" alt="Ice Cream" />
+        <p>Ice Cream</p>
+      </div>
+      <div class="category-card" onclick="window.location.href='products.html?category=Chocolates'">
+        <img src="assets/categories/chocolates.png" alt="Chocolates" />
+        <p>Chocolates & Sweets</p>
+      </div>
+      <div class="category-card" onclick="window.location.href='products.html?category=Snacks'">
+        <img src="assets/categories/snacks.png" alt="Snacks" />
+        <p>Snacks</p>
+      </div>
+      <div class="category-card" onclick="window.location.href='products.html?category=Tea & Coffee'">
+        <img src="assets/categories/teacoffee.png" alt="Tea & Coffee" />
+        <p>Tea & Coffee</p>
+      </div>
+      <div class="category-card" onclick="window.location.href='products.html?category=Atta, Rice & Dal'">
+        <img src="assets/categories/attarice.png" alt="Atta, Rice & Dal" />
+        <p>Atta, Rice & Dal</p>
+      </div>
+      <div class="category-card" onclick="window.location.href='products.html?category=Instant Food'">
+        <img src="assets/categories/instantfood.png" alt="Instant Food" />
+        <p>Instant Food</p>
+      </div>
+      <div class="category-card" onclick="window.location.href='products.html?category=Skin Care'">
+        <img src="assets/categories/skincare.png" alt="Skin Care" />
+        <p>Skin Care</p>
+      </div>
+      <div class="category-card" onclick="window.location.href='products.html?category=Stationery & Games'">
+        <img src="assets/categories/stationery.png" alt="Stationery & Games" />
+        <p>Stationery & Games</p>
+      </div>
+      <div class="category-card" onclick="window.location.href='products.html?category=Pooja Needs'">
+        <img src="assets/categories/poojaneeds.png" alt="Pooja Needs" />
+        <p>Pooja Needs</p>
+      </div>
+      <div class="category-card" onclick="window.location.href='products.html?category=Breakfast'">
+        <img src="assets/categories/breakfast.png" alt="Breakfast" />
+        <p>Breakfast</p>
+      </div>
+      <div class="category-card" onclick="window.location.href='products.html?category=Bakery & Biscuits'">
+        <img src="assets/categories/biscuits.png" alt="Bakery & Biscuits" />
+        <p>Bakery & Biscuits</p>
+      </div>
     </div>
   </section>
 
   <!-- Contact Section -->
   <section class="contact-section" id="contact">
     <h2>Contact Us</h2>
-    <div class="contact-cards">
-      <div class="contact-box">
+    <div class="contact-container">
+      <div class="contact-info">
         <p><strong>Email:</strong> support@grabzy.com</p>
-      </div>
-      <div class="contact-box">
         <p><strong>Phone:</strong> +91 98765 43210</p>
-      </div>
-      <div class="contact-box">
         <p><strong>Address:</strong> Mumbai, Maharashtra, India</p>
       </div>
     </div>

@@ -4,11 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Grabzy - Products</title>
-  <link rel="stylesheet" href="styles/main.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles/main.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
-
   <!-- Header -->
   <header class="header">
     <div class="logo">
@@ -17,11 +16,9 @@
     <nav class="navbar" id="navbar">
       <a href="index.html">Home</a>
       <a href="products.html">Products</a>
-      <a href="index.html#categories-section">Categories</a>
-      <a href="index.html#contact">Contact</a>
     </nav>
     <div class="header-right">
-      <input type="text" placeholder="Search products..." class="search-bar" />
+      <input type="text" placeholder="Search products..." class="search-bar" id="product-search"/>
       <div class="cart">
         <i class="fa-solid fa-cart-shopping"></i>
         <span class="cart-count">0</span>
@@ -33,15 +30,14 @@
   </header>
 
   <!-- Products Section -->
-  <main>
-    <section class="products-section">
-      <h2>All Products</h2>
-      <div class="products-grid" id="products-container">
-        <!-- Products will be loaded here -->
-      </div>
-    </section>
-  </main>
+  <section class="products-section">
+    <h2 id="products-heading">All Products</h2>
+    <div class="products-grid" id="products-container">
+      <!-- Product cards will be inserted here dynamically -->
+    </div>
+  </section>
 
   <script src="scripts/products.js"></script>
+  <script src="scripts/app.js"></script>
 </body>
 </html>
