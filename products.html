@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Grabzy - Products</title>
-  <link rel="stylesheet" href="styles/main.css"/>
+  <link rel="stylesheet" href="main.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
@@ -18,26 +18,20 @@
       <a href="products.html">Products</a>
     </nav>
     <div class="header-right">
-      <input type="text" placeholder="Search products..." class="search-bar" id="product-search"/>
+      <input type="text" placeholder="Search products..." class="search-bar" id="searchInput" />
       <div class="cart">
         <i class="fa-solid fa-cart-shopping"></i>
         <span class="cart-count">0</span>
-      </div>
-      <div class="hamburger" id="hamburger">
-        <i class="fas fa-bars"></i>
       </div>
     </div>
   </header>
 
   <!-- Products Section -->
   <section class="products-section">
-    <h2 id="products-heading">All Products</h2>
-    <div class="products-grid" id="products-container">
-      <!-- Product cards will be inserted here dynamically -->
-    </div>
+    <h2>All Products</h2>
+    <div id="product-list" class="product-list"></div>
   </section>
 
-  <script src="scripts/products.js"></script>
-  <script src="scripts/app.js"></script>
+  <script src="products.js"></script>
 </body>
 </html>

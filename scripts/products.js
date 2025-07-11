@@ -1,47 +1,53 @@
 document.addEventListener('DOMContentLoaded', () => {
   const productList = document.getElementById('product-list');
-  const productHeading = document.getElementById('product-heading');
-
-  // Get category from query parameter if exists
-  const urlParams = new URLSearchParams(window.location.search);
-  const categoryFilter = urlParams.get('category');
+  const searchInput = document.getElementById('searchInput');
 
   fetch('products.json')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error("Failed to fetch products");
+    .then(res => res.json())
+    .then(data => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const selectedCategory = urlParams.get('category');
+      let productsToShow = data;
+
+      if (selectedCategory) {
+        productsToShow = data.filter(product => product.category === selectedCategory);
       }
-      return response.json();
+
+      function displayProducts(products) {
+        productList.innerHTML = '';
+
+        if (products.length === 0) {
+          productList.innerHTML = '<p>No products found.</p>';
+          return;
+        }
+
+        products.forEach(product => {
+          const card = document.createElement('div');
+          card.classList.add('product-card');
+          card.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>₹${product.price}</p>
+            <button class="add-btn">Add to Cart</button>
+          `;
+          productList.appendChild(card);
+        });
+      }
+
+      displayProducts(productsToShow);
+
+      if (searchInput) {
+        searchInput.addEventListener('input', () => {
+          const searchTerm = searchInput.value.toLowerCase();
+          const filtered = productsToShow.filter(product =>
+            product.name.toLowerCase().includes(searchTerm)
+          );
+          displayProducts(filtered);
+        });
+      }
     })
-    .then(products => {
-      if (categoryFilter) {
-        products = products.filter(product => product.category === categoryFilter);
-        productHeading.textContent = categoryFilter;
-      }
-
-      if (products.length === 0) {
-        productList.innerHTML = "<p>No products found.</p>";
-        return;
-      }
-
-      productList.innerHTML = '';
-
-      products.forEach(product => {
-        const productCard = document.createElement('div');
-        productCard.classList.add('product-card');
-
-        productCard.innerHTML = `
-          <img src="${product.image}" alt="${product.name}" />
-          <h3>${product.name}</h3>
-          <p>₹${product.price}</p>
-          <button class="add-to-cart-btn">Add to Cart</button>
-        `;
-
-        productList.appendChild(productCard);
-      });
-    })
-    .catch(error => {
-      console.error("Error loading products:", error);
-      productList.innerHTML = "<p>Error loading products.</p>";
+    .catch(err => {
+      console.error('Error loading products:', err);
+      productList.innerHTML = '<p>Error loading products.</p>';
     });
 });
