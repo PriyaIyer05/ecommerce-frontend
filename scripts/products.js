@@ -1,48 +1,47 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const productGrid = document.getElementById("products-grid");
+document.addEventListener('DOMContentLoaded', () => {
+  const productList = document.getElementById('product-list');
+  const productHeading = document.getElementById('product-heading');
 
-  // Get category from URL if passed (e.g., products.html?category=Ice%20Cream)
+  // Get category from query parameter if exists
   const urlParams = new URLSearchParams(window.location.search);
-  const categoryFilter = urlParams.get("category");
+  const categoryFilter = urlParams.get('category');
 
-  fetch("products.json")
-    .then((response) => response.json())
-    .then((products) => {
+  fetch('products.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Failed to fetch products");
+      }
+      return response.json();
+    })
+    .then(products => {
       if (categoryFilter) {
-        products = products.filter(
-          (product) =>
-            product.category.toLowerCase() === categoryFilter.toLowerCase()
-        );
+        products = products.filter(product => product.category === categoryFilter);
+        productHeading.textContent = categoryFilter;
       }
 
       if (products.length === 0) {
-        productGrid.innerHTML = `<p>No products found for "${categoryFilter}".</p>`;
+        productList.innerHTML = "<p>No products found.</p>";
         return;
       }
 
-      productGrid.innerHTML = products
-        .map((product) => {
-          return `
-            <div class="product-card">
-              <img src="${product.image}" alt="${product.name}">
-              <h3>${product.name}</h3>
-              <p>${product.description}</p>
-              <p class="price">₹${product.price}</p>
-              <button class="add-to-cart">Add to Cart</button>
-            </div>
-          `;
-        })
-        .join("");
-    })
-    .catch((error) => {
-      console.error("Error loading products:", error);
-      productGrid.innerHTML = `<p>Failed to load products. Please try again later.</p>`;
-    });
+      productList.innerHTML = '';
 
-  // Mobile Nav Toggle
-  const hamburger = document.getElementById("hamburger");
-  const navbar = document.getElementById("navbar");
-  hamburger.addEventListener("click", () => {
-    navbar.classList.toggle("show");
-  });
+      products.forEach(product => {
+        const productCard = document.createElement('div');
+        productCard.classList.add('product-card');
+
+        productCard.innerHTML = `
+          <img src="${product.image}" alt="${product.name}" />
+          <h3>${product.name}</h3>
+          <p>₹${product.price}</p>
+          <button class="add-to-cart-btn">Add to Cart</button>
+        `;
+
+        productList.appendChild(productCard);
+      });
+    })
+    .catch(error => {
+      console.error("Error loading products:", error);
+      productList.innerHTML = "<p>Error loading products.</p>";
+    });
 });
