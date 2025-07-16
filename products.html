@@ -206,20 +206,20 @@
     .then(data => {
       products = data;
 
-      const searchQuery = (localStorage.getItem("searchQuery") || "").toLowerCase();
       const selectedCategory = localStorage.getItem("selectedCategory");
+      const searchQuery = (localStorage.getItem("searchQuery") || "").toLowerCase();
 
-      if (searchQuery) {
+      if (selectedCategory) {
+        filteredProducts = products.filter(p =>
+          p.category.toLowerCase() === selectedCategory.toLowerCase()
+        );
+        localStorage.removeItem("selectedCategory");
+      } else if (searchQuery) {
         filteredProducts = products.filter(p =>
           p.name.toLowerCase().includes(searchQuery) ||
           p.category.toLowerCase().includes(searchQuery)
         );
         localStorage.removeItem("searchQuery");
-      } else if (selectedCategory) {
-        filteredProducts = products.filter(p =>
-          p.category.toLowerCase() === selectedCategory.toLowerCase()
-        );
-        localStorage.removeItem("selectedCategory");
       } else {
         filteredProducts = [...products];
       }
@@ -264,14 +264,9 @@
     if (e.key === "Enter") {
       const query = searchInput.value.trim().toLowerCase();
       if (query) {
-        filteredProducts = products.filter(p =>
-          p.name.toLowerCase().includes(query) ||
-          p.category.toLowerCase().includes(query)
-        );
-        itemsToShow = 0;
-        productList.innerHTML = "";
-        loadMoreBtn.style.display = 'block';
-        showMore();
+        localStorage.removeItem("selectedCategory");
+        localStorage.setItem("searchQuery", query);
+        window.location.href = "products.html";
       }
     }
   });
