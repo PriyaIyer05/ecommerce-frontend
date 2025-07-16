@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
@@ -203,20 +203,27 @@
   <i class="fas fa-arrow-up"></i>
 </div>
 
+<!-- ✅ Updated Script -->
 <script>
   function goToCategory(category) {
     localStorage.setItem("selectedCategory", category);
+    localStorage.removeItem("searchQuery");
     window.location.href = "products.html";
   }
+
   window.addEventListener("scroll", () => {
     document.querySelector(".scroll-top").style.display = window.scrollY > 300 ? "block" : "none";
   });
+
   document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("cartCount").innerText = localStorage.getItem("cartCount") || 0;
-    document.getElementById("searchBox").addEventListener("keypress", function (e) {
+
+    const searchInput = document.getElementById("searchBox");
+    searchInput.addEventListener("keypress", function (e) {
       if (e.key === "Enter") {
         const query = this.value.trim().toLowerCase();
         if (query) {
+          localStorage.removeItem("selectedCategory"); // Important fix
           localStorage.setItem("searchQuery", query);
           window.location.href = "products.html";
         }

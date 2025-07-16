@@ -13,27 +13,22 @@
       margin: 0;
       padding: 0;
     }
-
     .navbar {
       background-color: #4A148C;
       padding: 1rem 2rem;
     }
-
     .navbar .nav-link {
       color: white !important;
       font-size: 20px;
       font-weight: bold;
       margin-right: 30px;
     }
-
     .navbar .nav-link:hover {
       color: #FFEB3B !important;
     }
-
     .navbar-brand img {
       height: 52px;
     }
-
     .search-bar {
       padding: 8px 14px;
       border-radius: 5px;
@@ -41,7 +36,6 @@
       font-size: 17px;
       width: 220px;
     }
-
     .cart-icon {
       background-color: #6A1B9A;
       padding: 10px 14px;
@@ -51,7 +45,6 @@
       cursor: pointer;
       font-size: 22px;
     }
-
     .cart-count {
       position: absolute;
       top: -7px;
@@ -62,18 +55,15 @@
       padding: 3px 7px;
       font-size: 13px;
     }
-
     .product-section {
       padding: 100px 20px 40px;
     }
-
     .product-section h2 {
       font-size: 36px;
       color: #4A148C;
       margin-bottom: 30px;
       text-align: center;
     }
-
     .product-card {
       background-color: white;
       border-radius: 15px;
@@ -83,11 +73,9 @@
       transition: transform 0.3s;
       height: 100%;
     }
-
     .product-card:hover {
       transform: scale(1.04);
     }
-
     .product-card img {
       width: 180px;
       height: 180px;
@@ -95,24 +83,20 @@
       margin: 0 auto 15px;
       display: block;
     }
-
     .product-card h5 {
       font-size: 20px;
       margin: 10px 0;
     }
-
     .product-card p {
       color: #666;
       font-size: 15px;
       margin-bottom: 5px;
     }
-
     .price {
       color: #E91E63;
       font-weight: bold;
       font-size: 18px;
     }
-
     .add-to-cart-btn {
       background-color: #4A148C;
       color: white;
@@ -123,7 +107,6 @@
       cursor: pointer;
       margin-top: 12px;
     }
-
     .load-more-btn {
       display: block;
       margin: 30px auto 0;
@@ -135,7 +118,6 @@
       border-radius: 6px;
       cursor: pointer;
     }
-
     footer {
       background-color: #4A148C;
       color: white;
@@ -143,7 +125,6 @@
       text-align: center;
       margin-top: 50px;
     }
-
     .scroll-top {
       position: fixed;
       bottom: 30px;
@@ -213,6 +194,8 @@
   const productList = document.getElementById('productList');
   const loadMoreBtn = document.getElementById('loadMoreBtn');
   const cartCount = document.getElementById('cartCount');
+  const searchInput = document.getElementById("searchBox");
+
   let products = [];
   let filteredProducts = [];
   let itemsToShow = 0;
@@ -269,26 +252,32 @@
 
   loadMoreBtn.addEventListener('click', showMore);
 
+  // Search functionality on this page too
+  searchInput.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      const query = searchInput.value.trim().toLowerCase();
+      if (query) {
+        filteredProducts = products.filter(p =>
+          p.name.toLowerCase().includes(query) ||
+          p.category.toLowerCase().includes(query)
+        );
+        itemsToShow = 0;
+        productList.innerHTML = ""; // clear current items
+        loadMoreBtn.style.display = 'block'; // show again
+        showMore();
+      }
+    }
+  });
+
   // Scroll to top
   window.addEventListener('scroll', () => {
     document.querySelector(".scroll-top").style.display =
       window.scrollY > 300 ? "block" : "none";
   });
 
-  // On page load
+  // On load
   document.addEventListener("DOMContentLoaded", () => {
     cartCount.innerText = localStorage.getItem("cartCount") || 0;
-
-    const searchInput = document.getElementById("searchBox");
-    searchInput.addEventListener("keypress", function (e) {
-      if (e.key === "Enter") {
-        const query = searchInput.value.trim().toLowerCase();
-        if (query) {
-          localStorage.setItem("searchQuery", query);
-          window.location.href = "products.html";
-        }
-      }
-    });
   });
 </script>
 
