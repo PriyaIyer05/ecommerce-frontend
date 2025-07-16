@@ -1422,12 +1422,112 @@
     "id": 140,
     "name": "Britannia Treat Jim Jam",
     "price": 20,
-    "image": "assets/products/jimjam.png",
+    "image": "assets/products/j",
     "category": "Bakery & Biscuits",
     "description": "Cream-filled sandwich biscuits with a jam center.",
     "weight": "100g",
     "delivery_time": "10 mins",
     "stock_status": "In Stock"
-  }
+  },
+  {
+  "id": 141,
+  "name": "Balaji Crunchem Chips",
+  "price": 20,
+  "image": "assets/products/balaji-crunchem.png",
+  "category": "Snacks",
+  "description": "Crunchy potato chips with a spicy and tangy flavor.",
+  "weight": "55g",
+  "delivery_time": "10 mins",
+  "stock_status": "In Stock"
+},
+{
+  "id": 142,
+  "name": "Balaji Moong Dal",
+  "price": 15,
+  "image": "assets/products/balaji-moongdal.png",
+  "category": "Snacks",
+  "description": "Crispy and salty moong dal – a classic Indian tea-time snack.",
+  "weight": "40g",
+  "delivery_time": "10 mins",
+  "stock_status": "In Stock"
+},
+{
+  "id": 143,
+  "name": "ACT II Butter Popcorn",
+  "price": 30,
+  "image": "assets/products/act2-butter.png",
+  "category": "Snacks",
+  "description": "Classic microwave popcorn with rich buttery flavor.",
+  "weight": "30g",
+  "delivery_time": "10 mins",
+  "stock_status": "In Stock"
+},
+{
+  "id": 144,
+  "name": "ACT II Caramel Popcorn",
+  "price": 35,
+  "image": "assets/products/act2-caramel.png",
+  "category": "Snacks",
+  "description": "Sweet and crunchy caramel-coated microwave popcorn.",
+  "weight": "30g",
+  "delivery_time": "10 mins",
+  "stock_status": "In Stock"
+},
+{
+  "id": 145,
+  "name": "Haldiram's Bhakarwadi",
+  "price": 55,
+  "image": "assets/products/bhakarwadi.png",
+  "category": "Snacks",
+  "description": "Crispy spiral snack filled with a spicy, sweet masala mix.",
+  "weight": "200g",
+  "delivery_time": "10 mins",
+  "stock_status": "In Stock"
+},
+{
+  "id": 146,
+  "name": "Doritos Nacho Cheese",
+  "price": 50,
+  "image": "assets/products/doritos.png",
+  "category": "Snacks",
+  "description": "Bold and crunchy nacho chips with a cheesy punch.",
+  "weight": "70g",
+  "delivery_time": "10 mins",
+  "stock_status": "In Stock"
+},
+{
+  "id": 147,
+  "name": "Garden South Indian Murukku",
+  "price": 45,
+  "image": "assets/products/garden-murukku.png",
+  "category": "Snacks",
+  "description": "Traditional crunchy South Indian Murukku snack.",
+  "weight": "180g",
+  "delivery_time": "10 mins",
+  "stock_status": "In Stock"
+},
+{
+  "id": 148,
+  "name": "Gopal Farali Chevda",
+  "price": 40,
+  "image": "assets/products/gopal-farali.png",
+  "category": "Snacks",
+  "description": "Light and crispy Farali Chevda made for fasting days.",
+  "weight": "150g",
+  "delivery_time": "10 mins",
+  "stock_status": "In Stock"
+},
+{
+  "id": 149,
+  "name": "Rajam Special South Mixture",
+  "price": 38,
+  "image": "assets/products/rajam-mixture.png",
+  "category": "Snacks",
+  "description": "Spicy South Indian mixture with crunchy sev and peanuts.",
+  "weight": "150g",
+  "delivery_time": "10 mins",
+  "stock_status": "In Stock"
+}
+
 ]
 
