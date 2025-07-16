@@ -10,18 +10,20 @@
     body {
       font-family: 'Arial', sans-serif;
       background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
     }
 
     .navbar {
       background-color: #4A148C;
-      padding: 0.7rem 2rem;
+      padding: 1rem 2rem;
     }
 
     .navbar .nav-link {
       color: white !important;
-      font-size: 16px;
+      font-size: 20px;
       font-weight: bold;
-      margin-right: 25px;
+      margin-right: 30px;
     }
 
     .navbar .nav-link:hover {
@@ -29,24 +31,25 @@
     }
 
     .navbar-brand img {
-      height: 42px;
+      height: 52px;
     }
 
     .search-bar {
-      padding: 5px 12px;
+      padding: 8px 14px;
       border-radius: 5px;
       border: none;
-      font-size: 15px;
-      width: 180px;
+      font-size: 17px;
+      width: 220px;
     }
 
     .cart-icon {
       background-color: #6A1B9A;
-      padding: 6px 12px;
-      border-radius: 8px;
+      padding: 10px 14px;
+      border-radius: 10px;
       color: white;
       position: relative;
       cursor: pointer;
+      font-size: 22px;
     }
 
     .cart-count {
@@ -56,16 +59,16 @@
       background-color: red;
       color: white;
       border-radius: 50%;
-      padding: 2px 6px;
-      font-size: 12px;
+      padding: 3px 7px;
+      font-size: 13px;
     }
 
     .product-section {
-      padding: 80px 20px 40px;
+      padding: 100px 20px 40px;
     }
 
     .product-section h2 {
-      font-size: 30px;
+      font-size: 36px;
       color: #4A148C;
       margin-bottom: 30px;
       text-align: center;
@@ -105,6 +108,17 @@
       color: #E91E63;
       font-weight: bold;
       font-size: 15px;
+    }
+
+    .add-to-cart-btn {
+      background-color: #4A148C;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
     }
 
     .load-more-btn {
@@ -154,7 +168,7 @@
   </button>
 
   <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
-    <ul class="navbar-nav ml-4"> <!-- shifted right -->
+    <ul class="navbar-nav">
       <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
       <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
       <li class="nav-item"><a class="nav-link" href="index.html#categories">Categories</a></li>
@@ -164,7 +178,7 @@
   </div>
 
   <div class="d-flex align-items-center ml-auto">
-    <input type="text" class="search-bar mr-3" placeholder="Search..."/>
+    <input type="text" class="search-bar mr-3" id="searchBox" placeholder="Search..."/>
     <div class="cart-icon" onclick="window.location.href='cart.html'">
       <i class="fas fa-shopping-cart"></i>
       <span class="cart-count" id="cartCount">0</span>
@@ -217,6 +231,7 @@
           <h5>${product.name}</h5>
           <p>${product.category}</p>
           <p class="price">₹${product.price}</p>
+          <button class="add-to-cart-btn" onclick="addToCart('${product.name}')">Add to Cart</button>
         </div>
       `;
       productList.appendChild(col);
@@ -228,6 +243,14 @@
     }
   }
 
+  function addToCart(productName) {
+    let count = localStorage.getItem("cartCount") || 0;
+    count = parseInt(count) + 1;
+    localStorage.setItem("cartCount", count);
+    document.getElementById("cartCount").innerText = count;
+    alert(`${productName} added to cart!`);
+  }
+
   loadMoreBtn.addEventListener('click', showMore);
 
   // Scroll to top
@@ -236,10 +259,20 @@
       window.scrollY > 300 ? "block" : "none";
   });
 
-  // Dynamic cart count (placeholder)
+  // Dynamic cart count and search
   document.addEventListener("DOMContentLoaded", () => {
-    const count = localStorage.getItem("cartCount") || 0;
-    cartCount.innerText = count;
+    cartCount.innerText = localStorage.getItem("cartCount") || 0;
+
+    const searchInput = document.getElementById("searchBox");
+    searchInput.addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
+        const query = searchInput.value.trim().toLowerCase();
+        if (query) {
+          localStorage.setItem("searchQuery", query);
+          window.location.href = "products.html";
+        }
+      }
+    });
   });
 </script>
 
