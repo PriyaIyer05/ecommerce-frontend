@@ -72,6 +72,7 @@
       text-align: center;
       transition: transform 0.3s;
       height: 100%;
+      cursor: pointer;
     }
     .product-card:hover {
       transform: scale(1.04);
@@ -225,12 +226,12 @@
       const col = document.createElement('div');
       col.className = 'col-md-4 mb-4';
       col.innerHTML = `
-        <div class="product-card">
+        <div class="product-card" onclick="window.location.href='product_view.html?id=${product.id}'">
           <img src="${product.image}" alt="${product.name}">
           <h5>${product.name}</h5>
           <p>${product.category}</p>
           <p class="price">₹${product.price}</p>
-          <button class="add-to-cart-btn" onclick="addToCart('${product.name}')">Add to Cart</button>
+          <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart('${product.name}')">Add to Cart</button>
         </div>
       `;
       productList.appendChild(col);
@@ -252,7 +253,6 @@
 
   loadMoreBtn.addEventListener('click', showMore);
 
-  // Search functionality on this page too
   searchInput.addEventListener("keypress", function (e) {
     if (e.key === "Enter") {
       const query = searchInput.value.trim().toLowerCase();
@@ -262,20 +262,18 @@
           p.category.toLowerCase().includes(query)
         );
         itemsToShow = 0;
-        productList.innerHTML = ""; // clear current items
-        loadMoreBtn.style.display = 'block'; // show again
+        productList.innerHTML = "";
+        loadMoreBtn.style.display = 'block';
         showMore();
       }
     }
   });
 
-  // Scroll to top
   window.addEventListener('scroll', () => {
     document.querySelector(".scroll-top").style.display =
       window.scrollY > 300 ? "block" : "none";
   });
 
-  // On load
   document.addEventListener("DOMContentLoaded", () => {
     cartCount.innerText = localStorage.getItem("cartCount") || 0;
   });

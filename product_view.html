@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Details</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #007b5e;
+      color: white;
+      padding: 16px;
+      text-align: center;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      display: inline-block;
+      margin-top: 8px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      display: flex;
+      gap: 30px;
+    }
+
+    img {
+      width: 300px;
+      border-radius: 6px;
+    }
+
+    .info {
+      flex: 1;
+    }
+
+    .info h2 {
+      margin-top: 0;
+      color: #007b5e;
+    }
+
+    .info p {
+      margin: 8px 0;
+      line-height: 1.5;
+    }
+
+    .info strong {
+      color: #555;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Product Details</h1>
+    <a href="index.html">← Back to Home</a>
+  </header>
+
+  <main id="product-container">
+    <!-- Product details will be shown here -->
+  </main>
+
+  <script src="data/products.js"></script> <!-- Your full products JSON file -->
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const productId = parseInt(params.get('id'));
+
+    const product = products.find(p => p.id === productId);
+
+    const container = document.getElementById('product-container');
+
+    if (product) {
+      container.innerHTML = `
+        <img src="${product.image}" alt="${product.name}">
+        <div class="info">
+          <h2>${product.name}</h2>
+          <p><strong>Category:</strong> ${product.category}</p>
+          <p><strong>Price:</strong> ₹${product.price}</p>
+          <p><strong>Description:</strong> ${product.description}</p>
+          <p><strong>Weight:</strong> ${product.weight}</p>
+          <p><strong>Delivery Time:</strong> ${product.delivery_time}</p>
+          <p><strong>Stock Status:</strong> ${product.stock_status}</p>
+          <button onclick="addToCart(${product.id})">Add to Cart</button>
+        </div>
+      `;
+    } else {
+      container.innerHTML = `<p style="padding:20px;">Product not found.</p>`;
+    }
+
+    function addToCart(id) {
+      alert("Product added to cart: ID " + id);
+    }
+  </script>
+</body>
+</html>
