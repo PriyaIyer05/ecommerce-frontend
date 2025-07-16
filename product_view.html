@@ -10,7 +10,8 @@
     body {
       font-family: 'Arial', sans-serif;
       background-color: #f5f5f5;
-      margin: 0; padding: 0;
+      margin: 0;
+      padding: 0;
     }
     .navbar {
       background-color: #4A148C;
@@ -25,7 +26,9 @@
     .navbar .nav-link:hover {
       color: #FFEB3B !important;
     }
-    .navbar-brand img { height: 52px; }
+    .navbar-brand img {
+      height: 52px;
+    }
     .cart-icon {
       background-color: #6A1B9A;
       padding: 10px 14px;
@@ -45,13 +48,6 @@
       padding: 3px 7px;
       font-size: 13px;
     }
-    footer {
-      background-color: #4A148C;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      margin-top: 40px;
-    }
     .product-details {
       padding: 100px 20px 40px;
     }
@@ -64,6 +60,13 @@
     }
     .btn-primary:hover {
       background-color: #6A1B9A;
+    }
+    footer {
+      background-color: #4A148C;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -96,7 +99,7 @@
   </div>
 </nav>
 
-<!-- Product Details Section -->
+<!-- Product Details -->
 <div class="product-details" id="productDetails">
   <div class="text-center">Loading product...</div>
 </div>
@@ -106,11 +109,10 @@
   <p>&copy; 2025 Grabzy. All rights reserved.</p>
 </footer>
 
-<!-- Scripts -->
+<!-- JavaScript -->
 <script>
   document.getElementById("cartCount").innerText = localStorage.getItem("cartCount") || 0;
 
-  // Get product ID from URL
   const urlParams = new URLSearchParams(window.location.search);
   const productId = urlParams.get("id");
 
@@ -135,10 +137,10 @@
               <h2>${product.name}</h2>
               <p><strong>Category:</strong> ${product.category}</p>
               <p><strong>Price:</strong> ₹${product.price}</p>
+              <p><strong>Description:</strong> ${product.description || 'No description available.'}</p>
               <p><strong>Weight:</strong> ${product.weight || 'N/A'}</p>
               <p><strong>Delivery Time:</strong> ${product.delivery_time || 'N/A'}</p>
               <p><strong>Stock Status:</strong> ${product.stock_status || 'N/A'}</p>
-              <p><strong>Description:</strong> ${product.description || 'No description available.'}</p>
               <button class="btn btn-primary" onclick="addToCart('${product.name}')">Add to Cart</button>
             </div>
           </div>
