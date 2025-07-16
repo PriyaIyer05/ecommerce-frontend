@@ -190,7 +190,7 @@
   <i class="fas fa-arrow-up"></i>
 </div>
 
-<!-- JS -->
+<!-- JavaScript -->
 <script>
   const productList = document.getElementById('productList');
   const loadMoreBtn = document.getElementById('loadMoreBtn');
@@ -205,7 +205,9 @@
     .then(res => res.json())
     .then(data => {
       products = data;
+
       const searchQuery = (localStorage.getItem("searchQuery") || "").toLowerCase();
+      const selectedCategory = localStorage.getItem("selectedCategory");
 
       if (searchQuery) {
         filteredProducts = products.filter(p =>
@@ -213,6 +215,11 @@
           p.category.toLowerCase().includes(searchQuery)
         );
         localStorage.removeItem("searchQuery");
+      } else if (selectedCategory) {
+        filteredProducts = products.filter(p =>
+          p.category.toLowerCase() === selectedCategory.toLowerCase()
+        );
+        localStorage.removeItem("selectedCategory");
       } else {
         filteredProducts = [...products];
       }
