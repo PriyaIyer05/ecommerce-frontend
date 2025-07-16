@@ -1,132 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewpoint" content="width=device-width, initial-scale=1.0/">
-    <title>Grabsy - Online Shopping</title>
-    <link rel="stylesheet" href="main.css"/>  
-  </head>
-  <body>
-
-    <header class="header">
-      <div class="logo">
-        <img src="logo.png" alt="Grabsy logo"/>
-      </div>
-      <nav class="navbar" id="navbar">
-        <a href="index.html"> Home</a>
-        <a href="products.html">Products</a>
-        <a href="#categories">Categories</a>
-        <a href="#contact">Contact</a>   
-      </nav>
-      <div class="header-right">
-        <input type="text" id="searchInput" class="search-bar" placeholder="Search Products..."/>
-         <div class="cart">🛒<span class="cart-count">0</span></div>
-        <div class="hamburger" onclick="toggleNavbar()">☰</div>
-      </div>
-    </header>
-    <section class="hero">    
-      <div class="hero-content">
-        <h1>Speedy Grocery Delivery</h1>
-        <p>Fresh. Fast. At Your Doorstep.</p>
-        <a href="products.html"><button class="shop-btn">Grab now</button>
-        </a>
-      </div>
-    </section>
-    <section class="Categories-section" id="Categories">
-      <h2>Shop by Category</h2>
-      <div class="Categories">
-        <div class="category-card" onclick="goToCategory('Fruits')">
-          <img src="assets/categories/fruits.png" alt="fruits"/>
-          <p>Fruits</p>
-        </div>
-        <div class="category-card" onclick="goToCategory('Vegetables')">
-          <img src="assets/categories/vegetables.png" alt="Vegetables"/>
-          <p>Vegetables</p>
-        </div>
-        <div class="category-card" onclick="goToCategory('Soft Drinks')">
-          <img src="assets/categories/softdrinks.png" alt="Soft Drinks"/>
-          <p>Soft Drinks</p>
-        </div>
-        <div class="category-card" onclick="goToCategory('Ice Cream')">
-          <img src="assets/categories/icecream.png" alt="Ice Cream"/>
-          <p>Ice Cream</p>
-        </div>
-        <div class="category-card" onclick="goToCategory('Chocolates & Sweets')">
-          <img src="assets/categories/chocolates.png" alt="Chocolates & Sweets"/>
-          <p>Chocolates & Sweets</p>
-        </div>
-        <div class="category-card" onclick="goToCategory('Snacks')">
-          <img src="assets/categories/snacks.png" alt="Snacks"/>
-          <p>Snacks</p>
-        </div>
-        <div class="category-card" onclick="goToCategory('Tea & Coffee')">
-          <img src="assets/categories/teacoffee.png" alt="Tea & Coffee"/>
-          <p>Tea & Coffee</p>
-        </div>
-        <div class="category-card" onclick="goToCategory('Atta Rice & Dal')">
-          <img src="assets/categories/attarice.png" alt="Atta Rice & Dal"/>
-          <p>Atta Rice & Dal</p>
-        </div>
-        <div class="category-card" onclick="goToCategory('Instant Food')">
-          <img src="assets/categories/instantfood.png" alt="Instant Food"/>
-          <p>Instant Food</p>
-        </div>
-        <div class="category-card" onclick="goToCategory('Skin Care')">
-          <img src="assets/categories/skincare.png" alt="Skin Care"/>
-          <p>Skin Care</p>
-        </div>
-        <div class="category-card" onclick="goToCategory('Stationery & Games')">
-          <img src="assets/categories/stationery.png" alt="Stationery & Games"/>
-          <p>Stationery & Games</p>
-        </div>
-        <div class="category-card" onclick="goToCategory('Pooja Needs')">
-          <img src="assets/categories/poojaneeds.png" alt="Pooja Needs"/>
-          <p>Pooja Needa</p>
-        </div>
-        <div class="category-card" onclick="goToCategory('Breakfast')">
-          <img src="assets/categories/breakfast.png" alt="Breakfast"/>
-          <p>Breakfast</p>
-        </div>
-        <div class="category-card" onclick="goToCategory('Bakery & Biscuits')">
-          <img src="assets/categories/biscuits.png" alt="Bakery & Biscuits"/>
-          <p>Bakery & Biscuits</p>
-        </div>
-      </div>
-    </section>
-    <section class="contact-section" id="Contact">
-      <h2>Contact Us</h2>
-      <div class="Contact-container">
-        <div class="contact-info">
-          <p><strong>Email: </strong>support@grabsy.com</p>
-          <p><strong>Phone: </strong>+91 9876543210</p>
-          <p><strong>Address: </strong>Borivali, Mumbai, Maharashtra, India</p>
-        </div>
-      </div>
-    </section>
-
-    <script>
-      function goToCategory(categoryName){
-        localStorage.setItem("selectedCategory", categoryName);
-          window.location.href ="products.html";
-
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grabzy - Online Shopping</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"/>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0; padding: 0;
+    }
+    .navbar {
+      background-color: #4A148C;
+      padding: 1rem 2rem;
+    }
+    .navbar .nav-link {
+      color: white !important;
+      font-size: 20px;
+      font-weight: bold;
+      margin-right: 30px;
+    }
+    .navbar .nav-link:hover {
+      color: #FFEB3B !important;
+    }
+    .navbar-brand img { height: 52px; }
+    .search-bar {
+      padding: 8px 14px;
+      border-radius: 5px;
+      border: none;
+      font-size: 17px;
+      width: 220px;
+    }
+    .cart-icon {
+      background-color: #6A1B9A;
+      padding: 10px 14px;
+      border-radius: 10px;
+      color: white;
+      position: relative;
+      cursor: pointer;
+      font-size: 22px;
+    }
+    .cart-count {
+      position: absolute;
+      top: -7px;
+      right: -8px;
+      background-color: red;
+      color: white;
+      border-radius: 50%;
+      padding: 3px 7px;
+      font-size: 13px;
+    }
+    .carousel-caption {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .categories-section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .categories-section h2 {
+      font-size: 36px;
+      color: #4A148C;
+      margin-bottom: 30px;
+    }
+    .category-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      height: 220px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .category-card:hover { transform: scale(1.05); }
+    .category-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin: 0 auto 10px;
+      display: block;
+    }
+    .category-card p {
+      font-weight: bold;
+      color: #333;
+      margin: 0;
+    }
+    footer {
+      background-color: #4A148C;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 20px;
+      background: #4A148C;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+    }
+    @media (min-width: 768px) {
+      .categories .col-md-2 {
+        flex: 0 0 20%;
+        max-width: 20%;
       }
-      function toggleNavbar() {
-        const navbar=document.getElementById("navbar");
-          navbar.classList.toggle("show");
-      }
-      //search bar functional
-      doucument.addEventLister("DOMContentLoaded", ()=>{
-        const searchInput= document.getElementById("searchInput");
-        if (searchInput) {
-          searchInput.addEventListener("keypress",function(e){
-            if (e.key ==="Enter" && searchInput.value.trm())
-          {
-            const query =searchInput.value.trim();
-            window.location.href = 'products.html?search=$ {encodeURIComponent(query)};'
-          }
-          });
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
+  <a class="navbar-brand" href="#"><img src="assets/grabzy-logo.png" alt="Grabzy Logo"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+      <li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
+      <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+      <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+  <div class="d-flex align-items-center ml-auto">
+    <input type="text" id="searchBox" class="search-bar mr-3" placeholder="Search..."/>
+    <div class="cart-icon" onclick="window.location.href='cart.html'">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="cart-count" id="cartCount">0</span>
+    </div>
+  </div>
+</nav>
+
+<div id="heroCarousel" class="carousel slide mt-5 pt-5" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets/categories/snacks.png" class="d-block w-100" height="500" style="object-fit: cover;" alt="Snacks">
+      <div class="carousel-caption">
+        <h3>Delicious Snacks</h3>
+        <p>Get 20% off on your favorite snacks!</p>
+        <a href="products.html" class="btn btn-warning">Shop Now</a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="assets/categories/fruits.png" class="d-block w-100" height="500" style="object-fit: cover;" alt="Fruits">
+      <div class="carousel-caption">
+        <h3>Fresh Fruits</h3>
+        <p>Farm fresh fruits delivered daily.</p>
+        <a href="products.html" class="btn btn-warning">Shop Now</a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="assets/categories/softdrinks.png" class="d-block w-100" height="500" style="object-fit: cover;" alt="Drinks">
+      <div class="carousel-caption">
+        <h3>Cool Beverages</h3>
+        <p>Stay refreshed with amazing offers!</p>
+        <a href="products.html" class="btn btn-warning">Shop Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="categories-section" id="categories">
+  <h2>Shop by Category</h2>
+  <div class="container">
+    <div class="row justify-content-center categories">
+      <!-- All 14 Category Cards -->
+      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Vegetables')"><img src="assets/categories/vegetables.png"><p>Vegetables</p></div></div>
+      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Fruits')"><img src="assets/categories/fruits.png"><p>Fruits</p></div></div>
+      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Icecream')"><img src="assets/categories/icecream.png"><p>Icecream</p></div></div>
+      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Soft Drinks')"><img src="assets/categories/softdrinks.png"><p>Soft Drinks</p></div></div>
+      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Bakery')"><img src="assets/categories/biscuits.png"><p>Bakery</p></div></div>
+      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Snacks')"><img src="assets/categories/snacks.png"><p>Snacks</p></div></div>
+      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Atta Rice & Dal')"><img src="assets/categories/attarice.png"><p>Atta Rice & Dal</p></div></div>
+      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Instant Food')"><img src="assets/categories/instantfood.png"><p>Instant Food</p></div></div>
+      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Breakfast')"><img src="assets/categories/breakfast.png"><p>Breakfast</p></div></div>
+      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Chocolates & Sweets')"><img src="assets/categories/chocolates.png"><p>Chocolates & Sweets</p></div></div>
+      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Tea & Coffee')"><img src="assets/categories/teacoffee.png"><p>Tea & Coffee</p></div></div>
+      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Skincare')"><img src="assets/categories/skincare.png"><p>Skincare</p></div></div>
+      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Stationery & Games')"><img src="assets/categories/stationery.png"><p>Stationery & Games</p></div></div>
+      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Pooja Needs')"><img src="assets/categories/poojaneeds.png"><p>Pooja Needs</p></div></div>
+    </div>
+  </div>
+</section>
+
+<footer><p>&copy; 2025 Grabzy. All rights reserved.</p></footer>
+
+<div class="scroll-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+  <i class="fas fa-arrow-up"></i>
+</div>
+
+<script>
+  function goToCategory(category) {
+    localStorage.setItem("selectedCategory", category);
+    window.location.href = "products.html";
+  }
+  window.addEventListener("scroll", () => {
+    document.querySelector(".scroll-top").style.display = window.scrollY > 300 ? "block" : "none";
+  });
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("cartCount").innerText = localStorage.getItem("cartCount") || 0;
+    document.getElementById("searchBox").addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
+        const query = this.value.trim().toLowerCase();
+        if (query) {
+          localStorage.setItem("searchQuery", query);
+          window.location.href = "products.html";
         }
-      });
-    </script>
-  </body>
+      }
+    });
+  });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

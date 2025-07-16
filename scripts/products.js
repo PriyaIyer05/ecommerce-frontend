@@ -5,49 +5,61 @@ document.addEventListener('DOMContentLoaded', () => {
   fetch('products.json')
     .then(res => res.json())
     .then(data => {
+      const categoryFromStorage = localStorage.getItem("selectedCategory");
       const urlParams = new URLSearchParams(window.location.search);
-      const selectedCategory = urlParams.get('category');
-      let productsToShow = data;
+      const searchQuery = urlParams.get("search");
 
-      if (selectedCategory) {
-        productsToShow = data.filter(product => product.category === selectedCategory);
+      let filteredProducts = data;
+
+      if (categoryFromStorage) {
+        filteredProducts = filteredProducts.filter(p => p.category === categoryFromStorage);
       }
 
-      function displayProducts(products) {
-        productList.innerHTML = '';
-
-        if (products.length === 0) {
-          productList.innerHTML = '<p>No products found.</p>';
-          return;
-        }
-
-        products.forEach(product => {
-          const card = document.createElement('div');
-          card.classList.add('product-card');
-          card.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
-            <h3>${product.name}</h3>
-            <p>₹${product.price}</p>
-            <button class="add-btn">Add to Cart</button>
-          `;
-          productList.appendChild(card);
-        });
+      if (searchQuery) {
+        const q = searchQuery.toLowerCase();
+        filteredProducts = filteredProducts.filter(p => p.name.toLowerCase().includes(q));
       }
 
-      displayProducts(productsToShow);
+      displayProducts(filteredProducts);
 
       if (searchInput) {
-        searchInput.addEventListener('input', () => {
-          const searchTerm = searchInput.value.toLowerCase();
-          const filtered = productsToShow.filter(product =>
-            product.name.toLowerCase().includes(searchTerm)
+        searchInput.value = searchQuery || '';
+        searchInput.addEventListener("input", () => {
+          const keyword = searchInput.value.toLowerCase();
+          const matched = filteredProducts.filter(p =>
+            p.name.toLowerCase().includes(keyword)
           );
-          displayProducts(filtered);
+          displayProducts(matched);
         });
       }
+
+      // Clear category after loading once
+      localStorage.removeItem("selectedCategory");
     })
     .catch(err => {
       console.error('Error loading products:', err);
-      productList.innerHTML = '<p>Error loading products.</p>';
+      productList.innerHTML = '<p>Unable to load products.</p>';
     });
+
+  function displayProducts(products) {
+    const productList = document.getElementById('product-list');
+    productList.innerHTML = "";
+
+    if (products.length === 0) {
+      productList.innerHTML = '<p>No products found.</p>';
+      return;
+    }
+
+    products.forEach(product => {
+      const div = document.createElement("div");
+      div.className = "product-card";
+      div.innerHTML = `
+        <img src="${product.image}" alt="${product.name}" />
+        <h3>${product.name}</h3>
+        <p>₹${product.price}</p>
+        <button class="add-btn">Add to Cart</button>
+      `;
+      productList.appendChild(div);
+    });
+  }
 });
