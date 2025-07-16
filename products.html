@@ -205,7 +205,7 @@
     .then(res => res.json())
     .then(data => {
       products = data;
-      const searchQuery = localStorage.getItem("searchQuery");
+      const searchQuery = (localStorage.getItem("searchQuery") || "").toLowerCase();
 
       if (searchQuery) {
         filteredProducts = products.filter(p =>
