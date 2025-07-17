@@ -57,6 +57,9 @@
       padding: 20px;
       border-radius: 10px;
     }
+    .carousel-item {
+      transition: transform 0.4s ease-in-out !important;
+    }
     .categories-section {
       padding: 60px 20px;
       text-align: center;
@@ -122,7 +125,6 @@
 </head>
 <body>
 
-<!-- ✅ Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
   <a class="navbar-brand" href="#"><img src="assets/grabzy-logo.png" alt="Grabzy Logo"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
@@ -147,15 +149,14 @@
   </div>
 </nav>
 
-<!-- ✅ Carousel -->
-<div id="heroCarousel" class="carousel slide mt-5 pt-5" data-ride="carousel">
+<div id="heroCarousel" class="carousel slide mt-5 pt-5" data-ride="carousel" data-interval="2000">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="assets/categories/snacks.png" class="d-block w-100" height="500" style="object-fit: cover;" alt="Snacks">
       <div class="carousel-caption">
         <h3>Delicious Snacks</h3>
         <p>Get 20% off on your favorite snacks!</p>
-        <a href="products.html" class="btn btn-warning">Shop Now</a>
+        <a href="#" onclick="goToCategory('Snacks')" class="btn btn-warning">Shop Now</a>
       </div>
     </div>
     <div class="carousel-item">
@@ -163,7 +164,7 @@
       <div class="carousel-caption">
         <h3>Fresh Fruits</h3>
         <p>Farm fresh fruits delivered daily.</p>
-        <a href="products.html" class="btn btn-warning">Shop Now</a>
+        <a href="#" onclick="goToCategory('Fruits')" class="btn btn-warning">Shop Now</a>
       </div>
     </div>
     <div class="carousel-item">
@@ -171,13 +172,22 @@
       <div class="carousel-caption">
         <h3>Cool Beverages</h3>
         <p>Stay refreshed with amazing offers!</p>
-        <a href="products.html" class="btn btn-warning">Shop Now</a>
+        <a href="#" onclick="goToCategory('Soft Drinks')" class="btn btn-warning">Shop Now</a>
       </div>
     </div>
   </div>
+
+  <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
 
-<!-- ✅ Categories Section -->
+<!-- ✅ Categories -->
 <section class="categories-section" id="categories">
   <h2>Shop by Category</h2>
   <div class="container">
@@ -200,15 +210,13 @@
   </div>
 </section>
 
-<!-- ✅ Footer -->
 <footer><p>&copy; 2025 Grabzy. All rights reserved.</p></footer>
 
-<!-- ✅ Scroll to Top -->
 <div class="scroll-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
   <i class="fas fa-arrow-up"></i>
 </div>
 
-<!-- ✅ Scripts -->
+<!-- ✅ Script -->
 <script>
   function goToCategory(category) {
     localStorage.setItem("selectedCategory", category);

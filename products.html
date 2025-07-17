@@ -118,7 +118,6 @@
 </head>
 <body>
 
-<!-- ✅ Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
   <a class="navbar-brand" href="index.html"><img src="assets/grabzy-logo.png" alt="Grabzy Logo"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
@@ -151,7 +150,6 @@
   </div>
 </nav>
 
-<!-- Products Section -->
 <section class="product-section">
   <h2>Our Products</h2>
   <div class="container">
@@ -160,7 +158,6 @@
   </div>
 </section>
 
-<!-- Footer -->
 <footer><p>&copy; 2025 Grabzy. All rights reserved.</p></footer>
 
 <div class="scroll-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
@@ -244,15 +241,12 @@
         }
 
         localStorage.setItem("cart", JSON.stringify(cart));
-        updateCartCount();
+
+        let totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+        cartCount.innerText = totalCount;
+
         alert(`${product.name} added to cart!`);
       });
-  }
-
-  function updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-    cartCount.innerText = totalQty;
   }
 
   loadMoreBtn.addEventListener('click', showMore);
@@ -269,7 +263,9 @@
   });
 
   document.addEventListener("DOMContentLoaded", () => {
-    updateCartCount();
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+    cartCount.innerText = totalQty;
   });
 
   window.addEventListener('scroll', () => {
