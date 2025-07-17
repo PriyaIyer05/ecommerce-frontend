@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
@@ -122,7 +122,7 @@
 </head>
 <body>
 
-<!-- ✅ Updated Navbar -->
+<!-- ✅ Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
   <a class="navbar-brand" href="#"><img src="assets/grabzy-logo.png" alt="Grabzy Logo"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
@@ -139,19 +139,7 @@
   </div>
   <div class="d-flex align-items-center ml-auto">
     <input type="text" id="searchBox" class="search-bar mr-3" placeholder="Search..."/>
-    
-    <!-- ✅ Login/Register Dropdown -->
-    <div class="dropdown mr-3">
-      <button class="btn btn-outline-light dropdown-toggle" type="button" id="userDropdown" data-toggle="dropdown">
-        <i class="fas fa-user-circle"></i> Account
-      </button>
-      <div class="dropdown-menu dropdown-menu-right">
-        <a class="dropdown-item" href="login.html">Login</a>
-        <a class="dropdown-item" href="register.html">Register</a>
-      </div>
-    </div>
-
-    <!-- ✅ Cart Icon -->
+    <div class="dropdown mr-3" id="accountDropdown"></div>
     <div class="cart-icon" onclick="window.location.href='cart.html'">
       <i class="fas fa-shopping-cart"></i>
       <span class="cart-count" id="cartCount">0</span>
@@ -159,7 +147,7 @@
   </div>
 </nav>
 
-<!-- Carousel -->
+<!-- ✅ Carousel -->
 <div id="heroCarousel" class="carousel slide mt-5 pt-5" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -189,37 +177,38 @@
   </div>
 </div>
 
-<!-- Categories Section -->
+<!-- ✅ Categories Section -->
 <section class="categories-section" id="categories">
   <h2>Shop by Category</h2>
   <div class="container">
     <div class="row justify-content-center categories">
-      <!-- All 14 Category Cards -->
-      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Vegetables')"><img src="assets/categories/vegetables.png"><p>Vegetables</p></div></div>
-      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Fruits')"><img src="assets/categories/fruits.png"><p>Fruits</p></div></div>
-      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Icecream')"><img src="assets/categories/icecream.png"><p>Icecream</p></div></div>
-      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Soft Drinks')"><img src="assets/categories/softdrinks.png"><p>Soft Drinks</p></div></div>
-      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Bakery')"><img src="assets/categories/biscuits.png"><p>Bakery</p></div></div>
-      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Snacks')"><img src="assets/categories/snacks.png"><p>Snacks</p></div></div>
-      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Atta Rice & Dal')"><img src="assets/categories/attarice.png"><p>Atta Rice & Dal</p></div></div>
-      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Instant Food')"><img src="assets/categories/instantfood.png"><p>Instant Food</p></div></div>
-      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Breakfast')"><img src="assets/categories/breakfast.png"><p>Breakfast</p></div></div>
-      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Chocolates & Sweets')"><img src="assets/categories/chocolates.png"><p>Chocolates & Sweets</p></div></div>
-      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Tea & Coffee')"><img src="assets/categories/teacoffee.png"><p>Tea & Coffee</p></div></div>
-      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Skincare')"><img src="assets/categories/skincare.png"><p>Skincare</p></div></div>
-      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Stationery & Games')"><img src="assets/categories/stationery.png"><p>Stationery & Games</p></div></div>
-      <div class="col-md-2 mb-4"><div class="category-card" onclick="goToCategory('Pooja Needs')"><img src="assets/categories/poojaneeds.png"><p>Pooja Needs</p></div></div>
+      <div class="col-md-2 mb-4" onclick="goToCategory('Atta & Rice')"><div class="category-card"><img src="assets/categories/attarice.png"><p>Atta & Rice</p></div></div>
+      <div class="col-md-2 mb-4" onclick="goToCategory('Biscuits')"><div class="category-card"><img src="assets/categories/biscuits.png"><p>Biscuits</p></div></div>
+      <div class="col-md-2 mb-4" onclick="goToCategory('Breakfast')"><div class="category-card"><img src="assets/categories/breakfast.png"><p>Breakfast</p></div></div>
+      <div class="col-md-2 mb-4" onclick="goToCategory('Chocolates')"><div class="category-card"><img src="assets/categories/chocolates.png"><p>Chocolates</p></div></div>
+      <div class="col-md-2 mb-4" onclick="goToCategory('Fruits')"><div class="category-card"><img src="assets/categories/fruits.png"><p>Fruits</p></div></div>
+      <div class="col-md-2 mb-4" onclick="goToCategory('Ice Cream')"><div class="category-card"><img src="assets/categories/icecream.png"><p>Ice Cream</p></div></div>
+      <div class="col-md-2 mb-4" onclick="goToCategory('Instant Food')"><div class="category-card"><img src="assets/categories/instantfood.png"><p>Instant Food</p></div></div>
+      <div class="col-md-2 mb-4" onclick="goToCategory('Pooja Needs')"><div class="category-card"><img src="assets/categories/poojaneeds.png"><p>Pooja Needs</p></div></div>
+      <div class="col-md-2 mb-4" onclick="goToCategory('Skincare')"><div class="category-card"><img src="assets/categories/skincare.png"><p>Skincare</p></div></div>
+      <div class="col-md-2 mb-4" onclick="goToCategory('Snacks')"><div class="category-card"><img src="assets/categories/snacks.png"><p>Snacks</p></div></div>
+      <div class="col-md-2 mb-4" onclick="goToCategory('Soft Drinks')"><div class="category-card"><img src="assets/categories/softdrinks.png"><p>Soft Drinks</p></div></div>
+      <div class="col-md-2 mb-4" onclick="goToCategory('Stationery')"><div class="category-card"><img src="assets/categories/stationery.png"><p>Stationery</p></div></div>
+      <div class="col-md-2 mb-4" onclick="goToCategory('Tea & Coffee')"><div class="category-card"><img src="assets/categories/teacoffee.png"><p>Tea & Coffee</p></div></div>
+      <div class="col-md-2 mb-4" onclick="goToCategory('Vegetables')"><div class="category-card"><img src="assets/categories/vegetables.png"><p>Vegetables</p></div></div>
     </div>
   </div>
 </section>
 
+<!-- ✅ Footer -->
 <footer><p>&copy; 2025 Grabzy. All rights reserved.</p></footer>
 
+<!-- ✅ Scroll to Top -->
 <div class="scroll-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
   <i class="fas fa-arrow-up"></i>
 </div>
 
-<!-- Scripts -->
+<!-- ✅ Scripts -->
 <script>
   function goToCategory(category) {
     localStorage.setItem("selectedCategory", category);
@@ -232,10 +221,38 @@
   });
 
   document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("cartCount").innerText = localStorage.getItem("cartCount") || 0;
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+    document.getElementById("cartCount").innerText = totalQty;
 
-    const searchInput = document.getElementById("searchBox");
-    searchInput.addEventListener("keypress", function (e) {
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    const accountDropdown = document.getElementById("accountDropdown");
+
+    if (isLoggedIn && currentUser) {
+      accountDropdown.innerHTML = `
+        <div class="dropdown">
+          <button class="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown">
+            👤 ${currentUser.email.split("@")[0]}
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#" onclick="logout()">Logout</a>
+          </div>
+        </div>`;
+    } else {
+      accountDropdown.innerHTML = `
+        <div class="dropdown">
+          <button class="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown">
+            <i class="fas fa-user-circle"></i> Account
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="login.html">Login</a>
+            <a class="dropdown-item" href="register.html">Register</a>
+          </div>
+        </div>`;
+    }
+
+    document.getElementById("searchBox").addEventListener("keypress", function (e) {
       if (e.key === "Enter") {
         const query = this.value.trim().toLowerCase();
         if (query) {
@@ -246,6 +263,12 @@
       }
     });
   });
+
+  function logout() {
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("currentUser");
+    window.location.reload();
+  }
 </script>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

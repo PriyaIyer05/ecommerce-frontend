@@ -6,32 +6,108 @@
   <title>Checkout - Grabzy</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
   <style>
-    body { padding: 80px 20px; background: #f9f9f9; }
+    body { padding: 80px 20px; background: #f9f9f9; font-family: Arial, sans-serif; }
     .checkout-box { background: #fff; padding: 30px; border-radius: 10px; }
     .btn-place-order { background-color: #4A148C; color: white; font-weight: bold; }
+    .navbar {
+      background-color: #4A148C;
+      padding: 1rem 2rem;
+    }
+    .navbar .nav-link {
+      color: white !important;
+      font-size: 20px;
+      font-weight: bold;
+      margin-right: 30px;
+    }
+    .navbar .nav-link:hover {
+      color: #FFEB3B !important;
+    }
+    .navbar-brand img {
+      height: 52px;
+    }
+    .cart-icon {
+      background-color: #6A1B9A;
+      padding: 10px 14px;
+      border-radius: 10px;
+      color: white;
+      position: relative;
+      cursor: pointer;
+      font-size: 22px;
+    }
+    .cart-count {
+      position: absolute;
+      top: -7px;
+      right: -8px;
+      background-color: red;
+      color: white;
+      border-radius: 50%;
+      padding: 3px 7px;
+      font-size: 13px;
+    }
   </style>
 </head>
 <body>
 
-<div class="container">
+<!-- ✅ Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
+  <a class="navbar-brand" href="index.html">
+    <img src="assets/grabzy-logo.png" alt="Grabzy Logo">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+      <li class="nav-item"><a class="nav-link" href="index.html#categories">Categories</a></li>
+      <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+      <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <div class="d-flex align-items-center ml-auto">
+    <div class="cart-icon" onclick="window.location.href='cart.html'">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="cart-count" id="cartCount">0</span>
+    </div>
+  </div>
+</nav>
+
+<!-- ✅ Checkout Section -->
+<div class="container mt-5 pt-4">
   <h2 class="text-center mb-4">Checkout</h2>
   <div class="row">
+    <!-- Billing Form -->
     <div class="col-md-6 checkout-box">
       <h5>Billing Details</h5>
       <form id="checkoutForm">
-        <div class="form-group"><input type="text" class="form-control" placeholder="Full Name" required></div>
-        <div class="form-group"><input type="email" class="form-control" placeholder="Email" required></div>
-        <div class="form-group"><input type="text" class="form-control" placeholder="Phone Number" required></div>
-        <div class="form-group"><textarea class="form-control" placeholder="Shipping Address" required></textarea></div>
-        <div class="form-group"><select class="form-control" required>
-          <option value="">Select Payment Method</option>
-          <option>Cash on Delivery</option>
-          <option>UPI</option>
-          <option>Credit/Debit Card</option>
-        </select></div>
+        <div class="form-group">
+          <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" class="form-control" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+          <input type="text" name="phone" class="form-control" placeholder="Phone Number" required>
+        </div>
+        <div class="form-group">
+          <textarea name="address" class="form-control" placeholder="Shipping Address" required></textarea>
+        </div>
+        <div class="form-group">
+          <select name="payment" class="form-control" required>
+            <option value="">Select Payment Method</option>
+            <option>Cash on Delivery</option>
+            <option>UPI</option>
+            <option>Credit/Debit Card</option>
+          </select>
+        </div>
         <button type="submit" class="btn btn-place-order btn-block">Place Order</button>
       </form>
     </div>
+
+    <!-- Order Summary -->
     <div class="col-md-6 checkout-box">
       <h5>Order Summary</h5>
       <ul id="summaryList" class="list-group mb-3"></ul>
@@ -40,23 +116,40 @@
   </div>
 </div>
 
+<!-- ✅ Script -->
 <script>
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const list = document.getElementById("summaryList");
   const totalEl = document.getElementById("totalCheckout");
+  const cartCount = document.getElementById("cartCount");
   let total = 0;
+  let totalQty = 0;
+
   cart.forEach(item => {
     let itemTotal = item.price * item.qty;
     total += itemTotal;
+    totalQty += item.qty;
     list.innerHTML += `<li class="list-group-item d-flex justify-content-between">${item.name} × ${item.qty}<span>₹${itemTotal}</span></li>`;
   });
+
   totalEl.innerText = total;
+  cartCount.innerText = totalQty;
 
   document.getElementById("checkoutForm").addEventListener("submit", function (e) {
     e.preventDefault();
+
+    if (cart.length === 0) {
+      alert("Your cart is empty.");
+      return;
+    }
+
+    alert("Your order has been placed successfully!");
     localStorage.removeItem("cart");
     window.location.href = "order-confirmation.html";
   });
 </script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

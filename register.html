@@ -38,11 +38,11 @@
   <h3 class="text-center mb-4">Create Your Grabzy Account</h3>
   <div class="form-group">
     <label>Email</label>
-    <input type="email" id="regEmail" class="form-control" required>
+    <input type="email" id="regEmail" class="form-control" required autocomplete="off">
   </div>
   <div class="form-group">
     <label>Password</label>
-    <input type="password" id="regPassword" class="form-control" required>
+    <input type="password" id="regPassword" class="form-control" required autocomplete="off">
   </div>
   <button class="btn btn-primary btn-block" onclick="register()">Register</button>
   <div class="text-center">
@@ -55,20 +55,25 @@
     const email = document.getElementById("regEmail").value.trim();
     const password = document.getElementById("regPassword").value;
 
+    // Basic field check
     if (!email || !password) {
-      alert("Please enter both email and password");
+      alert("Please enter both email and password.");
       return;
     }
 
+    // Get existing users from localStorage
     let users = JSON.parse(localStorage.getItem("users")) || [];
 
+    // Check for duplicate email
     if (users.some(user => user.email === email)) {
-      alert("Email already registered");
+      alert("This email is already registered. Please login.");
       return;
     }
 
-    users.push({ email, password });
+    // Add new user to localStorage
+    users.push({ email, password }); // For security, use hashing in real apps
     localStorage.setItem("users", JSON.stringify(users));
+
     alert("Registration successful. Please login.");
     window.location.href = "login.html";
   }

@@ -94,11 +94,11 @@
   <!-- ✅ Right Side: Login + Cart -->
   <div class="d-flex align-items-center ml-auto">
     <!-- Login/Register Dropdown -->
-    <div class="dropdown mr-3">
+    <div class="dropdown mr-3" id="authSection">
       <button class="btn btn-outline-light dropdown-toggle" type="button" id="userDropdown" data-toggle="dropdown">
         <i class="fas fa-user-circle"></i> Account
       </button>
-      <div class="dropdown-menu dropdown-menu-right">
+      <div class="dropdown-menu dropdown-menu-right" id="authMenu">
         <a class="dropdown-item" href="login.html">Login</a>
         <a class="dropdown-item" href="register.html">Register</a>
       </div>
@@ -124,10 +124,28 @@
 
 <!-- JavaScript -->
 <script>
-  document.getElementById("cartCount").innerText = localStorage.getItem("cartCount") || 0;
-
+  const cartCount = document.getElementById("cartCount");
   const urlParams = new URLSearchParams(window.location.search);
   const productId = urlParams.get("id");
+
+  function updateCartCount() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let total = cart.reduce((sum, item) => sum + item.qty, 0);
+    cartCount.innerText = total;
+  }
+
+  function addToCart(id, name, image, category, price) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let item = cart.find(i => i.id === id);
+    if (item) {
+      item.qty += 1;
+    } else {
+      cart.push({ id, name, image, category, price, qty: 1 });
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+    alert(`${name} added to cart!`);
+  }
 
   fetch("products.json")
     .then(res => res.json())
@@ -154,19 +172,27 @@
               <p><strong>Weight:</strong> ${product.weight || 'N/A'}</p>
               <p><strong>Delivery Time:</strong> ${product.delivery_time || 'N/A'}</p>
               <p><strong>Stock Status:</strong> ${product.stock_status || 'N/A'}</p>
-              <button class="btn btn-primary" onclick="addToCart('${product.name}')">Add to Cart</button>
+              <button class="btn btn-primary" onclick="addToCart(${product.id}, '${product.name}', '${product.image}', '${product.category}', ${product.price})">Add to Cart</button>
             </div>
           </div>
         </div>
       `;
     });
 
-  function addToCart(productName) {
-    let count = localStorage.getItem("cartCount") || 0;
-    count = parseInt(count) + 1;
-    localStorage.setItem("cartCount", count);
-    document.getElementById("cartCount").innerText = count;
-    alert(`${productName} added to cart!`);
+  document.addEventListener("DOMContentLoaded", () => {
+    updateCartCount();
+
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    const authMenu = document.getElementById("authMenu");
+    if (user) {
+      document.getElementById("userDropdown").innerHTML = `<i class="fas fa-user-circle"></i> ${user.email}`;
+      authMenu.innerHTML = `<a class="dropdown-item" href="#" onclick="logout()">Logout</a>`;
+    }
+  });
+
+  function logout() {
+    localStorage.removeItem("currentUser");
+    location.reload();
   }
 </script>
 
