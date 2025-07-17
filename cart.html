@@ -12,22 +12,10 @@
     .btn-qty { width: 35px; height: 35px; font-size: 18px; }
     .total-box { background: #fff; padding: 20px; border-radius: 8px; }
     .btn-checkout { background-color: #4A148C; color: white; font-weight: bold; }
-    .navbar {
-      background-color: #4A148C;
-      padding: 1rem 2rem;
-    }
-    .navbar .nav-link {
-      color: white !important;
-      font-size: 20px;
-      font-weight: bold;
-      margin-right: 30px;
-    }
-    .navbar .nav-link:hover {
-      color: #FFEB3B !important;
-    }
-    .navbar-brand img {
-      height: 52px;
-    }
+    .navbar { background-color: #4A148C; padding: 1rem 2rem; }
+    .navbar .nav-link { color: white !important; font-size: 20px; font-weight: bold; margin-right: 30px; }
+    .navbar .nav-link:hover { color: #FFEB3B !important; }
+    .navbar-brand img { height: 52px; }
     .cart-icon {
       background-color: #6A1B9A;
       padding: 10px 14px;
@@ -70,7 +58,6 @@
     </ul>
   </div>
 
-  <!-- ✅ Right Side: Login + Cart -->
   <div class="d-flex align-items-center ml-auto">
     <div class="dropdown mr-3">
       <button class="btn btn-outline-light dropdown-toggle" type="button" id="userDropdown" data-toggle="dropdown">
@@ -96,7 +83,7 @@
     <div class="col-md-8 cart-table">
       <table class="table table-bordered">
         <thead>
-          <tr><th>Product</th><th>Qty</th><th>Price</th><th>Total</th></tr>
+          <tr><th>Product</th><th>Qty</th><th>Price</th><th>Total</th><th>Action</th></tr>
         </thead>
         <tbody id="cartItems"></tbody>
       </table>
@@ -111,24 +98,29 @@
 
 <!-- ✅ Script -->
 <script>
-  const cartData = JSON.parse(localStorage.getItem("cart")) || [];
   const cartItemsEl = document.getElementById("cartItems");
   const totalAmountEl = document.getElementById("totalAmount");
   const cartCount = document.getElementById("cartCount");
   const emptyMessage = document.getElementById("emptyMessage");
 
-  let total = 0;
-  let itemCount = 0;
+  function renderCart() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cartItemsEl.innerHTML = "";
+    let total = 0;
+    let itemCount = 0;
 
-  cartItemsEl.innerHTML = "";
+    if (cart.length === 0) {
+      emptyMessage.innerText = "Your cart is empty.";
+      totalAmountEl.innerText = "0";
+      cartCount.innerText = "0";
+      return;
+    }
 
-  if (cartData.length === 0) {
-    emptyMessage.innerText = "Your cart is empty.";
-  } else {
-    cartData.forEach(item => {
-      let itemTotal = item.price * item.qty;
+    cart.forEach(item => {
+      const itemTotal = item.price * item.qty;
       total += itemTotal;
       itemCount += item.qty;
+
       cartItemsEl.innerHTML += `
         <tr>
           <td>${item.name}</td>
@@ -141,22 +133,37 @@
           </td>
           <td>₹${item.price}</td>
           <td>₹${itemTotal}</td>
+          <td><button class="btn btn-danger btn-sm" onclick="removeItem(${item.id})">❌</button></td>
         </tr>`;
     });
-  }
 
-  totalAmountEl.innerText = total;
-  cartCount.innerText = itemCount;
+    totalAmountEl.innerText = total;
+    cartCount.innerText = itemCount;
+  }
 
   function updateQty(id, change) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let item = cart.find(i => i.id === id);
-    if (!item) return;
-    item.qty += change;
-    if (item.qty < 1) item.qty = 1;
+    const itemIndex = cart.findIndex(i => i.id === id);
+    if (itemIndex === -1) return;
+
+    cart[itemIndex].qty += change;
+
+    if (cart[itemIndex].qty <= 0) {
+      cart.splice(itemIndex, 1); // Remove item
+    }
+
     localStorage.setItem("cart", JSON.stringify(cart));
-    location.reload();
+    renderCart();
   }
+
+  function removeItem(id) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart = cart.filter(item => item.id !== id);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
+  }
+
+  renderCart();
 </script>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
