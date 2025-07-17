@@ -143,7 +143,7 @@
 </head>
 <body>
 
-<!-- Navbar -->
+<!-- ✅ Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
   <a class="navbar-brand" href="index.html">
     <img src="assets/grabzy-logo.png" alt="Grabzy Logo">
@@ -162,8 +162,22 @@
     </ul>
   </div>
 
+  <!-- ✅ Right Side: Search + Login + Cart -->
   <div class="d-flex align-items-center ml-auto">
     <input type="text" class="search-bar mr-3" id="searchBox" placeholder="Search..."/>
+
+    <!-- ✅ Login/Register Dropdown -->
+    <div class="dropdown mr-3">
+      <button class="btn btn-outline-light dropdown-toggle" type="button" id="userDropdown" data-toggle="dropdown">
+        <i class="fas fa-user-circle"></i> Account
+      </button>
+      <div class="dropdown-menu dropdown-menu-right">
+        <a class="dropdown-item" href="login.html">Login</a>
+        <a class="dropdown-item" href="register.html">Register</a>
+      </div>
+    </div>
+
+    <!-- ✅ Cart Icon -->
     <div class="cart-icon" onclick="window.location.href='cart.html'">
       <i class="fas fa-shopping-cart"></i>
       <span class="cart-count" id="cartCount">0</span>
