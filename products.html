@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -245,13 +244,15 @@
         }
 
         localStorage.setItem("cart", JSON.stringify(cart));
-
-        let totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
-        localStorage.setItem("cartCount", totalCount);
-        cartCount.innerText = totalCount;
-
+        updateCartCount();
         alert(`${product.name} added to cart!`);
       });
+  }
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+    cartCount.innerText = totalQty;
   }
 
   loadMoreBtn.addEventListener('click', showMore);
@@ -268,7 +269,7 @@
   });
 
   document.addEventListener("DOMContentLoaded", () => {
-    cartCount.innerText = localStorage.getItem("cartCount") || 0;
+    updateCartCount();
   });
 
   window.addEventListener('scroll', () => {
