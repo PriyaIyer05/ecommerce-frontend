@@ -62,7 +62,7 @@
 
     let users = JSON.parse(localStorage.getItem("users")) || [];
 
-    if (users.some(u => u.email === email)) {
+    if (users.some(user => user.email === email)) {
       alert("Email already registered");
       return;
     }
